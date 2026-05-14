@@ -208,6 +208,8 @@ img {
 .text-center { text-align: center; }
 .mt-40 { margin-top: 40px; }
 .mb-40 { margin-bottom: 40px; }
+.pt-0 { padding-top: 0 !important; }
+.pb-0 { padding-bottom: 0 !important; }
 
 /* Grid / Auto Layout */
 .grid {
@@ -359,7 +361,6 @@ textarea.form-control {
 .section-cta {
   padding: 40px 0;
   background-color: #FFF;
-  margin-top: -40px; /* 前のセクションのpadding-bottom(80px)と合わせて、上が40px、下が40pxになるように調整 */
 }
 .cta-box {
   max-width: 900px;
