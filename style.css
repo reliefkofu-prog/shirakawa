@@ -454,3 +454,28 @@ textarea.form-control {
   .nav { display: none; }
   .header-cta { display: none; }
 }
+
+/* Banner Items */
+.banner-item h3 {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  transition: all 0.3s;
+}
+.banner-item h3::after {
+  content: '→';
+  font-size: 1.2rem;
+  transition: transform 0.3s;
+}
+.banner-item:hover h3 {
+  opacity: 0.8;
+}
+.banner-item:hover h3::after {
+  transform: translateX(8px);
+}
+.banner-item .placeholder-img {
+  transition: transform 0.5s;
+}
+.banner-item:hover .placeholder-img {
+  transform: scale(1.05);
+}
