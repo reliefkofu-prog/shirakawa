@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 :root {
   --color-main: #111;
   --color-bg: #FFF;
@@ -54,18 +58,10 @@ img {
   margin: 0 auto;
   padding: 0 20px;
 }
-.container-banners {
-  width: 100%;
-  max-width: 900px;
+.cta-box, .container-banners {
+  width: 900px;
+  max-width: calc(100% - 40px);
   margin: 0 auto;
-  padding: 0;
-}
-@media (max-width: 900px) {
-  .container-banners, .cta-box {
-    margin-left: 20px !important;
-    margin-right: 20px !important;
-    width: calc(100% - 40px) !important;
-  }
 }
 .section {
   padding: 80px 0;
@@ -376,8 +372,6 @@ textarea.form-control {
   background-color: #FFF;
 }
 .cta-box {
-  max-width: 900px;
-  margin: 0 auto;
   border: 1px solid var(--color-border);
   border-radius: 0 !important;
   padding: 60px 40px;
