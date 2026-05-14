@@ -55,12 +55,16 @@ img {
   padding: 0 20px;
 }
 .container-banners {
+  width: 100%;
   max-width: 900px;
   margin: 0 auto;
+  padding: 0;
 }
 @media (max-width: 900px) {
-  .container-banners {
-    padding: 0 20px;
+  .container-banners, .cta-box {
+    margin-left: 20px !important;
+    margin-right: 20px !important;
+    width: calc(100% - 40px) !important;
   }
 }
 .section {
@@ -375,7 +379,7 @@ textarea.form-control {
   max-width: 900px;
   margin: 0 auto;
   border: 1px solid var(--color-border);
-  border-radius: 0;
+  border-radius: 0 !important;
   padding: 60px 40px;
   text-align: center;
   background-color: #FFF;
