@@ -353,28 +353,41 @@ textarea.form-control {
 /* CTA Section */
 .section-cta {
   background-color: #F2F2F2;
-  text-align: center;
-  padding: 80px 0;
+  padding: 60px 0;
   border-top: 1px solid var(--color-border);
 }
+.section-cta .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+}
+.cta-content {
+  text-align: left;
+}
 .cta-title {
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   font-weight: bold;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 .cta-text {
-  font-size: 1.1rem;
-  margin-bottom: 40px;
+  font-size: 1rem;
+  margin-bottom: 0;
   color: #666;
 }
 .cta-btns {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
+  flex-shrink: 0;
 }
 
 @media (max-width: 768px) {
+  .section-cta .container {
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+  }
+  .cta-content {
+    text-align: center;
+  }
   .media-box { flex-direction: column; }
   .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
   .nav { display: none; }
