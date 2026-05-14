@@ -366,6 +366,7 @@ textarea.form-control {
   justify-content: space-between;
   align-items: center;
   gap: 40px;
+  max-width: 900px;
 }
 .cta-content {
   text-align: left;
