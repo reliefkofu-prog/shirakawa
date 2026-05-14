@@ -357,7 +357,7 @@ textarea.form-control {
 
 /* CTA Section */
 .section-cta {
-  padding: 80px 0;
+  padding: 40px 0;
   background-color: #FFF;
 }
 .cta-box {
@@ -397,14 +397,16 @@ textarea.form-control {
   gap: 10px;
   background: #FFF;
   border: 1px solid var(--color-main);
-  padding: 15px 40px;
+  padding: 15px 0;
+  width: 300px;
   font-weight: bold;
   font-size: 1.1rem;
 }
 .cta-btn-form {
   background: var(--color-main);
   color: #FFF;
-  padding: 15px 40px;
+  padding: 15px 0;
+  width: 300px;
   font-weight: bold;
   font-size: 1.1rem;
   display: flex;
@@ -414,12 +416,20 @@ textarea.form-control {
 }
 
 @media (max-width: 768px) {
+  .section-cta {
+    padding: 30px 0;
+  }
   .cta-box {
     margin: 0 20px;
     padding: 40px 20px;
   }
   .cta-btns {
     flex-direction: column;
+    align-items: center;
+  }
+  .cta-btn-tel, .cta-btn-form {
+    width: 100%;
+    max-width: 300px;
   }
   .cta-title {
     font-size: 1.4rem;
