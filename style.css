@@ -359,6 +359,7 @@ textarea.form-control {
 .section-cta {
   padding: 40px 0;
   background-color: #FFF;
+  margin-top: -40px; /* 前のセクションのpadding-bottom(80px)と合わせて、上が40px、下が40pxになるように調整 */
 }
 .cta-box {
   max-width: 900px;
