@@ -60,8 +60,14 @@ img {
 }
 .cta-box, .container-banners {
   width: 900px;
-  max-width: calc(100% - 40px);
   margin: 0 auto;
+}
+@media (max-width: 940px) {
+  .cta-box, .container-banners {
+    width: auto;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
 }
 .section {
   padding: 80px 0;
