@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>会社案内｜株式会社しらかわ</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .section-lead-box {
+      background-color: #f2f2f2;
+      padding: 40px;
+      text-align: center;
+      margin-bottom: 60px;
+      
+    }
+    .history-table th {
+      width: 20%;
+      white-space: nowrap;
+    }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+    }
+    @media (max-width: 768px) {
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+      .history-table th, .history-table td {
+        display: block;
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <div class="logo" style="display: flex; align-items: center; gap: 15px;">
+        <a href="index.html" style="display: flex;"><img src="img/toplogo.png" alt="株式会社しらかわ" style="height: 40px; width: auto;"></a>
+        <span style="font-size: 1.1rem; color: #666; font-weight: bold; letter-spacing: 0.05em; padding-top: 5px;">大物5軸精密機械加工</span>
+      </div>
+      <nav class="nav">
+        <ul>
+          <li><a href="technology.html">私たちの加工技術</a></li>
+          <li><a href="equipment.html">設備案内</a></li>
+          <li><a href="news.html">お知らせ</a></li>
+          <li><a href="company.html">会社案内</a></li>
+          <li><a href="recruit.html">採用情報</a></li>
+        </ul>
+      </nav>
+      <div class="header-cta">
+        <a href="contact.html" class="btn btn-primary" style="padding: 10px 20px; font-size: 0.9rem;">お問い合わせ</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Page Header -->
+  <div class="page-header">
+    <div class="container">
+      <h1 class="page-header-title">会社案内</h1>
+    </div>
+  </div>
+
+  <!-- Video Section -->
+  <section class="section" style="padding-bottom: 0;">
+    <div class="container">
+      <div class="video-container" style="background-color: #000; max-width: 900px; margin: 0 auto; aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center; position: relative;">
+        <div class="placeholder-img" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0.6; border: none;">会社紹介動画</div>
+        <div style="z-index: 1; text-align: center;">
+          <div style="width: 80px; height: 80px; background: rgba(255,255,255,0.2); border: 2px solid #FFF; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; cursor: pointer;">
+            <div style="width: 0; height: 0; border-top: 15px solid transparent; border-bottom: 15px solid transparent; border-left: 25px solid #FFF; margin-left: 5px;"></div>
+          </div>
+          <p style="color: #FFF; font-weight: bold; letter-spacing: 0.1em;">PLAY VIDEO</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top: 40px;">
+    <div class="container">
+
+
+
+      <!-- Intro Text -->
+      <div style="text-align: center; margin-bottom: 80px;">
+        <h2 style="font-size: 1.5rem; margin-bottom: 30px; font-weight: bold;">
+          高品質を追求し、求め続ける。<br>
+          限りない理想を現実化するために。
+        </h2>
+        <p style="max-width: 100%; margin: 0 auto; text-align: left; display: inline-block;">
+          平均年齢３５歳の若い感性と無限の可能性を活かし、 常に新しい製品新しい作り方に挑戦するのが私たちのモットーであります。 とにかく若いスタッフの会社です。市場に必要とされる小回りの効く フットワークの軽い会社を目指し、工場内２４時間体制で対応させて頂いております。
+        </p>
+      </div>
+
+      <!-- 会社経歴 -->
+      <h2 class="section-title">会社経歴</h2>
+      <table class="table history-table" style="margin-bottom: 80px;">
+        <tbody>
+          <tr><th>昭和39年4月</th><td>山梨県大月市にて、白川洋一が白川精機製作所を創業</td></tr>
+          <tr><th>平成3年5月</th><td>資本金300万円で有限会社白川精機製作所を設立し、法人化</td></tr>
+          <tr><th>平成4年5月</th><td>同所に工場（300平米）を増築し、大型精密機械加工を拡大</td></tr>
+          <tr><th>平成14年5月</th><td>白川喜一が社長の就任と同時に、資本金1,000万円に増資し、社名を株式会社しらかわに改称</td></tr>
+          <tr><th>平成22年2月</th><td>大型精密機械加工能力を増強のため、山梨県大月市から山梨県都留市（現在地）に新工場（1,100平米）を新築し移転現在に至る</td></tr>
+          <tr><th>令和元年12月</th><td>第二工場の建設予定地（5,900平米）を取得</td></tr>
+          <tr><th>令和3年 7月</th><td>経済産業省「サプライチェーン対策のための国内投資促進事業補助金」に採択決定</td></tr>
+          <tr><th>令和4年 5月</th><td>第二工場(2,671平米)を新築。<br>同時に新設備を加工機7台、測定機1台導入し2拠点での操業開始</td></tr>
+          <tr><th>令和6年 7月</th><td>第三工場建設予定地(2,167平米)を取得</td></tr>
+          <tr><th>令和7年 8月</th><td>倉庫兼社員寮建設予定地(1,809平米)を取得</td></tr>
+        </tbody>
+      </table>
+
+      <!-- 会社概要 -->
+      <h2 class="section-title">会社概要</h2>
+      <table class="table" style="margin-bottom: 80px;">
+        <tbody>
+          <tr><th style="width: 25%;">名称</th><td>株式会社しらかわ</td></tr>
+          <tr><th>代表者</th><td>代表取締役 白川喜一</td></tr>
+          <tr>
+            <th>所在地</th>
+            <td>
+              〒402-0006（大原工業団地内）<br>
+              本社・第二工場： 山梨県都留市小形山1<br>
+              第一工場： 山梨県都留市小形山11-3<br>
+              大月倉庫： 山梨県大月市猿橋町小沢1532
+            </td>
+          </tr>
+          <tr><th>ＴＥＬ</th><td>0554-56-8233</td></tr>
+          <tr><th>ＦＡＸ</th><td>0554-56-8231</td></tr>
+          <tr><th>Ｅ－ＭＡＩＬ</th><td>shir@shir.co.jp</td></tr>
+          <tr><th>創業</th><td>昭和３９年４月</td></tr>
+          <tr><th>資本金</th><td>１０００万円</td></tr>
+          <tr><th>主要取引銀行</th><td>日本政策金融公庫・みずほ銀行・山梨中央銀行</td></tr>
+          <tr><th>顧問契約先</th><td>弁護士法人福澤法律事務所　　渡辺社会保険労務士事務所</td></tr>
+          <tr><th>社員数</th><td>47名（2023年6月現在）</td></tr>
+          <tr>
+            <th>主要お客様</th>
+            <td>
+              ＴＨＫ株式会社殿　株式会社日本製鋼所殿<br>
+              株式会社明電舎殿　津田駒工業株式会社殿
+            </td>
+          </tr>
+          <tr><th>営業品目</th><td>精密機械部品、車輌部品、ＩＴ関連部品等の機械加工</td></tr>
+        </tbody>
+      </table>
+
+      <!-- メディア紹介 -->
+      <h2 class="section-title">メディア紹介</h2>
+      <div class="grid grid-3" style="margin-bottom: 80px;">
+        <a href="news-detail.html" class="card" style="text-decoration:none; color:inherit; border: none;">
+          <div class="placeholder-img" style="aspect-ratio: 3/2;">メディア画像 1</div>
+          <div class="card-body" style="padding: 15px 0;">
+            <div class="card-meta" style="font-size: 0.8rem; color: #999;">2024.07.17</div>
+            <h3 class="card-title" style="font-size: 1rem; margin: 5px 0;">山梨日日新聞 掲載記事</h3>
+            <p class="card-text" style="font-size: 0.9rem;">「ビジネスリーダーに聞く」の特集にて弊社の取り組みが紹介されました。</p>
+          </div>
+        </a>
+        <a href="#" class="card" style="text-decoration:none; color:inherit; border: none;">
+          <div class="placeholder-img" style="aspect-ratio: 3/2;">メディア画像 2</div>
+          <div class="card-body" style="padding: 15px 0;">
+            <div class="card-meta" style="font-size: 0.8rem; color: #999;">2024.07.11</div>
+            <h3 class="card-title" style="font-size: 1rem; margin: 5px 0;">山梨日日新聞 掲載記事</h3>
+            <p class="card-text" style="font-size: 0.9rem;">第三工場新設に関する記事が掲載されました。</p>
+          </div>
+        </a>
+        <a href="#" class="card" style="text-decoration:none; color:inherit; border: none;">
+          <div class="placeholder-img" style="aspect-ratio: 3/2;">メディア画像 3</div>
+          <div class="card-body" style="padding: 15px 0;">
+            <div class="card-meta" style="font-size: 0.8rem; color: #999;">2024.06.04</div>
+            <h3 class="card-title" style="font-size: 1rem; margin: 5px 0;">YBSワイドニュース 放映</h3>
+            <p class="card-text" style="font-size: 0.9rem;">地元ニュース番組にて弊社の工場内24時間体制の様子が放送されました。</p>
+          </div>
+        </a>
+      </div>
+
+      <!-- お知らせ -->
+      <h2 class="section-title">お知らせ</h2>
+      <div class="grid grid-3" style="margin-bottom: 60px;">
+        
+        <!-- THK株式会社 -->
+        <a href="news-detail.html" class="card" style="text-decoration:none; color:inherit; border: none;">
+          <div class="placeholder-img" style="aspect-ratio: 3/2;">THK ご来社 画像</div>
+          <div class="card-body" style="padding: 15px 0;">
+            <div class="card-meta" style="font-size: 0.8rem; color: #999;">2026.05.14</div>
+            <h3 class="card-title" style="font-size:1rem; margin: 5px 0;">THK株式会社　寺町社長ご来社</h3>
+          </div>
+        </a>
+
+        <!-- 山梨中央銀行 -->
+        <a href="#" class="card" style="text-decoration:none; color:inherit; border: none;">
+          <div class="placeholder-img" style="aspect-ratio: 3/2;">山梨中央銀行 ご来社 画像</div>
+          <div class="card-body" style="padding: 15px 0;">
+            <div class="card-meta" style="font-size: 0.8rem; color: #999;">2026.04.20</div>
+            <h3 class="card-title" style="font-size:1rem; margin: 5px 0;">山梨中央銀行　関会長　古屋頭取ご来社</h3>
+          </div>
+        </a>
+
+        <!-- オークマ株式会社 -->
+        <a href="#" class="card" style="text-decoration:none; color:inherit; border: none;">
+          <div class="placeholder-img" style="aspect-ratio: 3/2;">オークマ ご来社 画像</div>
+          <div class="card-body" style="padding: 15px 0;">
+            <div class="card-meta" style="font-size: 0.8rem; color: #999;">2026.02.10</div>
+            <h3 class="card-title" style="font-size:1rem; margin: 5px 0;">オークマ株式会社　家城社長ご来社</h3>
+          </div>
+        </a>
+
+        <!-- 標語 -->
+        <a href="#" class="card" style="text-decoration:none; color:inherit; border: none;">
+          <div class="placeholder-img" style="aspect-ratio: 3/2;">標語 画像</div>
+          <div class="card-body" style="padding: 15px 0;">
+            <div class="card-meta" style="font-size: 0.8rem; color: #999;">2026.01.15</div>
+            <h3 class="card-title" style="font-size:1rem; margin: 5px 0;">標号</h3>
+          </div>
+        </a>
+
+        <!-- 企業版ふるさと納税 -->
+        <a href="#" class="card" style="text-decoration:none; color:inherit; border: none;">
+          <div class="placeholder-img" style="aspect-ratio: 3/2;">ふるさと納税 画像</div>
+          <div class="card-body" style="padding: 15px 0;">
+            <div class="card-meta" style="font-size: 0.8rem; color: #999;">2025.11.05</div>
+            <h3 class="card-title" style="font-size:1rem; margin: 5px 0;">企業版ふるさと納税</h3>
+          </div>
+        </a>
+
+        <!-- 受賞物 -->
+        <a href="#" class="card" style="text-decoration:none; color:inherit; border: none;">
+          <div class="placeholder-img" style="aspect-ratio: 3/2;">受賞物 画像</div>
+          <div class="card-body" style="padding: 15px 0;">
+            <div class="card-meta" style="font-size: 0.8rem; color: #999;">2020.04.01</div>
+            <h3 class="card-title" style="font-size:1rem; margin: 5px 0;">受賞物 社会貢献</h3>
+          </div>
+        </a>
+
+      </div>
+
+      <!-- トップへ戻る -->
+      <div style="text-align: right; margin-bottom: 40px;">
+        <a href="#" style="color: #666; text-decoration: none;">このページの上へ↑</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      
+      <!-- 会社情報ブロック -->
+      <div class="footer-info-block" style="margin-bottom: 30px;">
+        <div class="footer-logo" style="font-size: 1.5rem; font-weight: bold; margin-bottom: 15px;">株式会社しらかわ</div>
+        
+        <!-- アンダーバーと、その下の2カラム情報 -->
+        <div style="border-top: 1px solid #D9D9D9; padding-top: 20px;">
+          <p style="font-size: 0.9rem; margin: 0 0 10px 0;">〒402-0006 山梨県都留市小形山1</p>
+          <p style="font-size: 0.9rem; margin: 0; line-height: 1.8;">TEL：0554-56-8233<br>FAX：0554-56-8231<br>E-MAIL：shir@shir.co.jp</p>
+        </div>
+      </div>
+      
+      <!-- ナビゲーションメニュー -->
+            <!-- ナビゲーションメニュー -->
+      <div class="footer-nav-bottom" style="display: flex; justify-content: center; align-items: center; gap: 15px; margin-bottom: 20px; flex-wrap: wrap; font-size: 0.8rem;">
+        <a href="technology.html" style="text-decoration: none; color: #FFF;">私たちの加工技術</a>
+        <span style="color: rgba(255,255,255,0.3);">|</span>
+        <a href="equipment.html" style="text-decoration: none; color: #FFF;">設備案内</a>
+        <span style="color: rgba(255,255,255,0.3);">|</span>
+        <a href="news.html" style="text-decoration: none; color: #FFF;">お知らせ</a>
+        <span style="color: rgba(255,255,255,0.3);">|</span>
+        <a href="company.html" style="text-decoration: none; color: #FFF;">会社案内</a>
+        <span style="color: rgba(255,255,255,0.3);">|</span>
+        <a href="recruit.html" style="text-decoration: none; color: #FFF;">採用情報</a>
+        <span style="color: rgba(255,255,255,0.3);">|</span>
+        <a href="contact.html" style="text-decoration: none; color: #FFF;">お問い合わせ</a>
+      </div>
+
+      <!-- コピーライト -->
+      <div class="footer-copyright" style="text-align: center; color: #999; font-size: 0.8rem;">
+        &copy; SHIRAKAWA Co., Ltd. All Rights Reserved.
+      </div>
+      
+    </div>
+  </footer>
+
+</body>
+</html>

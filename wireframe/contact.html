@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>お問い合わせ｜株式会社しらかわ</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <div class="logo" style="display: flex; align-items: center; gap: 15px;">
+        <a href="index.html" style="display: flex;"><img src="img/toplogo.png" alt="株式会社しらかわ" style="height: 40px; width: auto;"></a>
+        <span style="font-size: 1.1rem; color: #666; font-weight: bold; letter-spacing: 0.05em; padding-top: 5px;">大物5軸精密機械加工</span>
+      </div>
+            <nav class="nav">
+        <ul>
+          <li><a href="technology.html">私たちの加工技術</a></li>
+          <li><a href="equipment.html">設備案内</a></li>
+          <li><a href="news.html">お知らせ</a></li>
+          <li><a href="company.html">会社案内</a></li>
+          <li><a href="recruit.html">採用情報</a></li>
+        </ul>
+      </nav>
+      <div class="header-cta">
+        <a href="contact.html" class="btn btn-primary" style="padding: 10px 20px; font-size: 0.9rem;">お問い合わせ</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Page Header -->
+  <div class="page-header">
+    <div class="container">
+      <h1 class="page-header-title">お問い合わせ</h1>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container">
+      <p class="section-lead" style="max-width: 800px; margin: 0 auto 60px;">
+        加工のご相談、工場見学、採用についてなど、お気軽にお問い合わせください。
+        図面や資料などがございましたら、添付ファイルにてお送りいただけます。
+      </p>
+
+      <div class="form-box" style="max-width: 800px; margin: 0 auto;">
+        <form action="#" method="post" enctype="multipart/form-data">
+          
+          <!-- 問い合わせ種別 -->
+          <div class="form-group">
+            <label class="form-label">お問い合わせ種別 <span class="required-mark">必須</span></label>
+            <div class="radio-group">
+              <label><input type="radio" name="inquiry_type" value="新規問い合わせ" checked> 新規問い合わせ</label>
+              <label><input type="radio" name="inquiry_type" value="メディア取材"> メディア取材</label>
+              <label><input type="radio" name="inquiry_type" value="工場見学"> 工場見学</label>
+              <label><input type="radio" name="inquiry_type" value="採用"> 採用</label>
+              <label><input type="radio" name="inquiry_type" value="メーカーからの連絡窓口"> メーカーからの連絡窓口</label>
+              <label><input type="radio" name="inquiry_type" value="その他"> その他</label>
+            </div>
+          </div>
+
+          <!-- 会社名 -->
+          <div class="form-group">
+            <label class="form-label" for="company">貴社名</label>
+            <input type="text" id="company" name="company" class="form-control" placeholder="例：株式会社〇〇">
+          </div>
+
+          <!-- 氏名 -->
+          <div class="form-group">
+            <label class="form-label" for="name">お名前 <span class="required-mark">必須</span></label>
+            <input type="text" id="name" name="name" class="form-control" placeholder="例：山田 太郎">
+          </div>
+
+          <!-- メールアドレス -->
+          <div class="form-group">
+            <label class="form-label" for="email">メールアドレス <span class="required-mark">必須</span></label>
+            <input type="email" id="email" name="email" class="form-control" placeholder="例：info@example.com">
+          </div>
+
+          <!-- 電話番号 -->
+          <div class="form-group">
+            <label class="form-label" for="tel">電話番号</label>
+            <input type="tel" id="tel" name="tel" class="form-control" placeholder="例：03-1234-5678">
+          </div>
+
+          <!-- お問い合わせ内容 -->
+          <div class="form-group">
+            <label class="form-label" for="message">お問い合わせ内容 <span class="required-mark">必須</span></label>
+            <textarea id="message" name="message" class="form-control" placeholder="お問い合わせ内容をご入力ください。"></textarea>
+          </div>
+
+          <!-- 添付ファイル -->
+          <div class="form-group">
+            <label class="form-label">添付ファイル（図面サンプル・資料等・最大3つまで）</label>
+            <div style="margin-bottom: 10px;">
+              <input type="file" id="file1" name="file1" class="form-control" style="background-color: transparent; border: none; padding: 0;">
+            </div>
+            <div style="margin-bottom: 10px;">
+              <input type="file" id="file2" name="file2" class="form-control" style="background-color: transparent; border: none; padding: 0;">
+            </div>
+            <div>
+              <input type="file" id="file3" name="file3" class="form-control" style="background-color: transparent; border: none; padding: 0;">
+            </div>
+            <p style="font-size: 0.8rem; color: #666; margin-top: 5px;">※PDF、JPG、PNG等のファイル形式に対応（1ファイル最大5MBまで）</p>
+          </div>
+
+          <!-- 同意チェック -->
+          <div class="form-group" style="text-align: center; margin-top: 40px; margin-bottom: 30px;">
+            <label style="cursor: pointer; font-weight: bold;">
+              <input type="checkbox" name="privacy_agree" required>
+              <a href="#" style="text-decoration: underline;">プライバシーポリシー</a>に同意する
+            </label>
+          </div>
+
+          <!-- 送信ボタン -->
+          <div class="text-center">
+            <button type="submit" class="btn btn-primary" style="padding: 20px 60px; font-size: 1.2rem; cursor: pointer; border: none;">送信する</button>
+          </div>
+
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+      <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      
+      <!-- 会社情報ブロック -->
+      <div class="footer-info-block" style="margin-bottom: 30px;">
+        <div class="footer-logo" style="font-size: 1.5rem; font-weight: bold; margin-bottom: 15px;">株式会社しらかわ</div>
+        
+        <!-- アンダーバーと、その下の2カラム情報 -->
+        <div style="border-top: 1px solid #D9D9D9; padding-top: 20px;">
+          <p style="font-size: 0.9rem; margin: 0 0 10px 0;">〒402-0006 山梨県都留市小形山1</p>
+          <p style="font-size: 0.9rem; margin: 0; line-height: 1.8;">TEL：0554-56-8233<br>FAX：0554-56-8231<br>E-MAIL：shir@shir.co.jp</p>
+        </div>
+      </div>
+      
+      <!-- ナビゲーションメニュー -->
+            <!-- ナビゲーションメニュー -->
+      <div class="footer-nav-bottom" style="display: flex; justify-content: center; align-items: center; gap: 15px; margin-bottom: 20px; flex-wrap: wrap; font-size: 0.8rem;">
+        <a href="technology.html" style="text-decoration: none; color: #FFF;">私たちの加工技術</a>
+        <span style="color: rgba(255,255,255,0.3);">|</span>
+        <a href="equipment.html" style="text-decoration: none; color: #FFF;">設備案内</a>
+        <span style="color: rgba(255,255,255,0.3);">|</span>
+        <a href="news.html" style="text-decoration: none; color: #FFF;">お知らせ</a>
+        <span style="color: rgba(255,255,255,0.3);">|</span>
+        <a href="company.html" style="text-decoration: none; color: #FFF;">会社案内</a>
+        <span style="color: rgba(255,255,255,0.3);">|</span>
+        <a href="recruit.html" style="text-decoration: none; color: #FFF;">採用情報</a>
+        <span style="color: rgba(255,255,255,0.3);">|</span>
+        <a href="contact.html" style="text-decoration: none; color: #FFF;">お問い合わせ</a>
+      </div>
+
+      <!-- コピーライト -->
+      <div class="footer-copyright" style="text-align: center; color: #999; font-size: 0.8rem;">
+        &copy; SHIRAKAWA Co., Ltd. All Rights Reserved.
+      </div>
+      
+    </div>
+  </footer>
+
+</body>
+</html>

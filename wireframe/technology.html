@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>私たちの加工技術｜株式会社しらかわ</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .section-lead-box {
+      background-color: #f2f2f2;
+      padding: 40px;
+      text-align: center;
+      margin-bottom: 60px;
+      
+    }
+    .case-card {
+      border: 1px solid var(--color-border);
+      background-color: #FFF;
+      
+      margin-bottom: 40px;
+      padding: 30px;
+    }
+    .case-header {
+      border-bottom: 2px solid #111;
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+    }
+    .case-title {
+      font-size: 1.3rem;
+      font-weight: bold;
+      margin: 0;
+    }
+    .case-subtitle {
+      font-size: 1.1rem;
+      color: #444;
+      margin: 5px 0 0 0;
+    }
+    .case-content {
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+    .case-info {
+      flex: 1;
+      min-width: 300px;
+    }
+    .case-info table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+    }
+    .case-info th {
+      width: 80px;
+      text-align: left;
+      padding: 8px 0;
+      color: #666;
+      font-weight: normal;
+      vertical-align: top;
+    }
+    .case-info td {
+      padding: 8px 0;
+      font-weight: bold;
+      vertical-align: top;
+    }
+    .case-images {
+      flex: 1;
+      min-width: 300px;
+      display: flex;
+      gap: 15px;
+    }
+    .case-images .placeholder-img {
+      flex: 1;
+      aspect-ratio: 4 / 3;
+      
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <div class="logo">
+        <a href="index.html"><img src="img/toplogo.png" alt="株式会社しらかわ" style="height: 40px; width: auto;"></a>
+      </div>
+      <nav class="nav">
+        <ul>
+          <li><a href="technology.html">私たちの加工技術</a></li>
+          <li><a href="equipment.html">設備案内</a></li>
+          <li><a href="news.html">お知らせ</a></li>
+          <li><a href="company.html">会社案内</a></li>
+          <li><a href="recruit.html">採用情報</a></li>
+        </ul>
+      </nav>
+      <div class="header-cta">
+        <a href="contact.html" class="btn btn-primary" style="padding: 10px 20px; font-size: 0.9rem;">お問い合わせ</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Page Header -->
+  <div class="page-header">
+    <div class="container">
+      <h1 class="page-header-title">私たちの加工技術</h1>
+    </div>
+  </div>
+
+  <section class="section" style="padding-top: 40px;">
+    <div class="container">
+
+
+
+      <!-- Intro -->
+      <div style="text-align: center; margin-bottom: 60px;">
+        <h2 style="font-size: 1.6rem; margin-bottom: 30px; font-weight: bold;">加工事例・製品情報</h2>
+        <p style="max-width: 900px; margin: 0 auto; text-align: left; display: inline-block; line-height: 2;">
+          蓄積されたノウハウと鍛錬された職人の技。それが私たちの財産です。<br>
+          「株式会社しらかわ」は、マシニング加工＋旋盤加工の複合加工を得意とし、 多品種少量品から量産品まで材質にこだわらず加工できます。<br>
+          また、社内にて使用の治具は全て内作しております。<br>
+          特には、我々の大型旋盤加工品を参照いただければ幸いです。
+        </p>
+      </div>
+
+      <!-- 加工事例 -->
+      <div class="case-list">
+
+        <!-- 事例 A -->
+        <div class="case-card">
+          <div class="case-header">
+            <h3 class="case-title">加工事例 A</h3>
+            <p class="case-subtitle">ナット部品</p>
+          </div>
+          <div class="case-content">
+            <div class="case-info">
+              <table>
+                <tbody>
+                  <tr>
+                    <th>材質</th>
+                    <td>SCM420-H</td>
+                  </tr>
+                  <tr>
+                    <th>寸法</th>
+                    <td>Φ300×580L</td>
+                  </tr>
+                  <tr>
+                    <th>内容</th>
+                    <td>旋盤加工にて内径にネジを切り、マシニング加工にて側面部の加工を行う</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="case-images">
+              <div class="placeholder-img">画像 A-1 (4:3)</div>
+              <div class="placeholder-img">画像 A-2 (4:3)</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 事例 B -->
+        <div class="case-card">
+          <div class="case-header">
+            <h3 class="case-title">加工事例 B</h3>
+            <p class="case-subtitle">軸部品</p>
+          </div>
+          <div class="case-content">
+            <div class="case-info">
+              <table>
+                <tbody>
+                  <tr>
+                    <th>材質</th>
+                    <td>SCM420-H</td>
+                  </tr>
+                  <tr>
+                    <th>寸法</th>
+                    <td>Φ165×1,650L</td>
+                  </tr>
+                  <tr>
+                    <th>内容</th>
+                    <td>弊社最大の複合旋盤（MULTUS B750）にて外径ネジ切り及び側面部の加工を行う</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="case-images">
+              <div class="placeholder-img">画像 B-1 (4:3)</div>
+              <div class="placeholder-img">画像 B-2 (4:3)</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 事例 C -->
+        <div class="case-card">
+          <div class="case-header">
+            <h3 class="case-title">加工事例 C</h3>
+            <p class="case-subtitle">工作機械部品</p>
+          </div>
+          <div class="case-content">
+            <div class="case-info">
+              <table>
+                <tbody>
+                  <tr>
+                    <th>材質</th>
+                    <td>S45C-N</td>
+                  </tr>
+                  <tr>
+                    <th>寸法</th>
+                    <td>Φ545×40L</td>
+                  </tr>
+                  <tr>
+                    <th>内容</th>
+                    <td>立型旋盤（V100R）にて内外径を加工しマシニング（MB66VA)にて穴開け</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="case-images">
+              <div class="placeholder-img">画像 C-1 (4:3)</div>
+              <div class="placeholder-img">画像 C-2 (4:3)</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 事例 D -->
+        <div class="case-card">
+          <div class="case-header">
+            <h3 class="case-title">加工事例 D</h3>
+            <p class="case-subtitle">成型機部品</p>
+          </div>
+          <div class="case-content">
+            <div class="case-info">
+              <table>
+                <tbody>
+                  <tr>
+                    <th>材質</th>
+                    <td>SCM440-H</td>
+                  </tr>
+                  <tr>
+                    <th>寸法</th>
+                    <td>Φ520×150L</td>
+                  </tr>
+                  <tr>
+                    <th>内容</th>
+                    <td>立型旋盤（V100R）にて内外径を加工しマシニング（MB66VA)にて穴開け</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="case-images">
+              <div class="placeholder-img">画像 D-1 (4:3)</div>
+              <div class="placeholder-img">画像 D-2 (4:3)</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      
+      <!-- 会社情報ブロック -->
+      <div class="footer-info-block" style="margin-bottom: 30px;">
+        <div class="footer-logo" style="font-size: 1.5rem; font-weight: bold; margin-bottom: 15px;">株式会社しらかわ</div>
+        
+        <!-- アンダーバーと、その下の2カラム情報 -->
+        <div style="border-top: 1px solid #D9D9D9; padding-top: 20px;">
+          <p style="font-size: 0.9rem; margin: 0 0 10px 0;">〒402-0006 山梨県都留市小形山1</p>
+          <p style="font-size: 0.9rem; margin: 0; line-height: 1.8;">TEL：0554-56-8233<br>FAX：0554-56-8231<br>E-MAIL：shir@shir.co.jp</p>
+        </div>
+      </div>
+      
+      <!-- ナビゲーションメニュー -->
+            <!-- ナビゲーションメニュー -->
+      <div class="footer-nav-bottom" style="display: flex; justify-content: center; align-items: center; gap: 15px; margin-bottom: 20px; flex-wrap: wrap; font-size: 0.8rem;">
+        <a href="technology.html" style="text-decoration: none; color: #FFF;">私たちの加工技術</a>
+        <span style="color: rgba(255,255,255,0.3);">|</span>
+        <a href="equipment.html" style="text-decoration: none; color: #FFF;">設備案内</a>
+        <span style="color: rgba(255,255,255,0.3);">|</span>
+        <a href="news.html" style="text-decoration: none; color: #FFF;">お知らせ</a>
+        <span style="color: rgba(255,255,255,0.3);">|</span>
+        <a href="company.html" style="text-decoration: none; color: #FFF;">会社案内</a>
+        <span style="color: rgba(255,255,255,0.3);">|</span>
+        <a href="recruit.html" style="text-decoration: none; color: #FFF;">採用情報</a>
+        <span style="color: rgba(255,255,255,0.3);">|</span>
+        <a href="contact.html" style="text-decoration: none; color: #FFF;">お問い合わせ</a>
+      </div>
+
+      <!-- コピーライト -->
+      <div class="footer-copyright" style="text-align: center; color: #999; font-size: 0.8rem;">
+        &copy; SHIRAKAWA Co., Ltd. All Rights Reserved.
+      </div>
+      
+    </div>
+  </footer>
+
+</body>
+</html>
