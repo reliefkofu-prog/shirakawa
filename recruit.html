@@ -65,6 +65,80 @@
       from { opacity: 0; transform: translateY(10px); }
       to { opacity: 1; transform: translateY(0); }
     }
+
+    /* Accordion */
+    .job-accordion {
+      border: 1px solid var(--color-border);
+      margin-bottom: 20px;
+      background-color: var(--color-bg);
+    }
+    .job-accordion-summary {
+      padding: 20px 30px;
+      background-color: var(--color-bg-light);
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background-color 0.2s;
+    }
+    .job-accordion-summary::-webkit-details-marker {
+      display: none;
+    }
+    .job-accordion-summary:hover {
+      background-color: #E8E8E8;
+    }
+    .job-accordion-summary .section-title {
+      margin-bottom: 0;
+      border-left: none;
+      padding-left: 0;
+      font-size: 1.2rem;
+    }
+    .accordion-icon {
+      position: relative;
+      width: 20px;
+      height: 20px;
+    }
+    .accordion-icon::before, .accordion-icon::after {
+      content: '';
+      position: absolute;
+      background-color: var(--color-main);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .accordion-icon::before {
+      width: 16px;
+      height: 2px;
+    }
+    .accordion-icon::after {
+      width: 2px;
+      height: 16px;
+      transition: transform 0.3s;
+    }
+    details[open] .accordion-icon::after {
+      transform: translate(-50%, -50%) rotate(90deg);
+      opacity: 0;
+    }
+    .job-accordion-content {
+      padding: 30px;
+      border-top: 1px solid var(--color-border);
+    }
+    .job-accordion-content .table {
+      margin-bottom: 0;
+    }
+    .inactive-job {
+      padding: 20px 30px;
+      border: 1px solid var(--color-border);
+      background-color: var(--color-bg-light);
+      margin-bottom: 20px;
+    }
+    .inactive-job .section-title {
+      margin-bottom: 0;
+      border-left: none;
+      padding-left: 0;
+      font-size: 1.2rem;
+    }
   </style>
 </head>
 <body>
@@ -114,8 +188,12 @@
         <!-- 募集中リスト -->
         <div class="job-active-list">
           <!-- Job 1 -->
-          <div class="job-item" style="margin-bottom: 80px;">
-            <h2 class="section-title" style="margin-bottom: 20px;">製造工（NCオペレータ・機械加工）</h2>
+          <details class="job-accordion">
+            <summary class="job-accordion-summary">
+              <h2 class="section-title">製造工 (ＮＣオペレータ)</h2>
+              <span class="accordion-icon"></span>
+            </summary>
+            <div class="job-accordion-content">
             <table class="table">
               <tbody>
                 <tr><th style="width: 25%;">業務内容</th><td>NC旋盤、マシニングセンタや複合加工機を用いた 金属材料の切削加工 / 製品のヤスリ掛け、仕上げ作業、梱包、発送作業等</td></tr>
@@ -143,11 +221,16 @@
                 <tr><th>選考方法</th><td>面接(予定1回)</td></tr>
               </tbody>
             </table>
-          </div>
+            </div>
+          </details>
 
           <!-- Job 2 -->
-          <div class="job-item" style="margin-bottom: 80px;">
-            <h2 class="section-title" style="margin-bottom: 20px;">検査・仕上げ作業</h2>
+          <details class="job-accordion">
+            <summary class="job-accordion-summary">
+              <h2 class="section-title">製造工 (ヤスリ掛け・仕上げ作業・梱包・発送)</h2>
+              <span class="accordion-icon"></span>
+            </summary>
+            <div class="job-accordion-content">
             <table class="table">
               <tbody>
                 <tr><th style="width: 25%;">業務内容</th><td>製品の検査 ・三次元測定機を使用した製品（精密機械部品） の 検査 ・製品のヤスリ掛け、仕上げ作業、梱包、発送等</td></tr>
@@ -175,11 +258,16 @@
                 <tr><th>選考方法</th><td>面接(予定1回)</td></tr>
               </tbody>
             </table>
-          </div>
+            </div>
+          </details>
 
           <!-- Job 3 -->
-          <div class="job-item" style="margin-bottom: 80px;">
-            <h2 class="section-title" style="margin-bottom: 20px;">素材切断・在庫管理</h2>
+          <details class="job-accordion">
+            <summary class="job-accordion-summary">
+              <h2 class="section-title">倉庫管理</h2>
+              <span class="accordion-icon"></span>
+            </summary>
+            <div class="job-accordion-content">
             <table class="table">
               <tbody>
                 <tr><th style="width: 25%;">業務内容</th><td>素材(鋼材)をクレーンにて切断機 (バンドソー)に乗せて指定寸法に切断。 素材の在庫管理。</td></tr>
@@ -208,108 +296,21 @@
                 <tr><th>選考方法</th><td>面接(予定1回)</td></tr>
               </tbody>
             </table>
-          </div>
-
-          <!-- Job 4 -->
-          <div class="job-item" style="margin-bottom: 80px;">
-            <h2 class="section-title" style="margin-bottom: 20px;">（※要確認：経験者枠等の製造工？）</h2>
-            <table class="table">
-              <tbody>
-                <tr><th style="width: 25%;">業務内容</th><td>（※資料上に該当する業務内容の記載がありませんでした）</td></tr>
-                <tr><th>年齢</th><td>~64歳</td></tr>
-                <tr><th>学歴</th><td>不問</td></tr>
-                <tr><th>必須免許・資格</th><td>普通自動車運転免許 (AT限定可)</td></tr>
-                <tr><th>試用期間</th><td>期間1ケ月、時給1,150円～、その他の条件は面接時説明</td></tr>
-                <tr><th>賃金形態等</th><td>月給（賃金締切日：固定(月末以外) / 賃金支払日：固定(月末)）</td></tr>
-                <tr><th>基本給</th><td>216,000円〜400,000円</td></tr>
-                <tr><th>固定残業代</th><td>無し</td></tr>
-                <tr><th>その他手当等</th><td>賃金は資格、年齢、経験、スキル等により決定。各種手当有(面接時説明)。家族手当 配偶者5,000円 子3,000円(条件付)</td></tr>
-                <tr><th>通勤手当</th><td>実費支給(上限無し)</td></tr>
-                <tr><th>昇給</th><td>有り（前年度実績：1月あたり5.00％〜10.00％）</td></tr>
-                <tr><th>賞与</th><td>有り（回数：年3回、前年度実績：480,000円〜2,030,000円）</td></tr>
-                <tr><th>就業時間</th><td>8時00分〜17時00分 ※時間外は月上限45時間</td></tr>
-                <tr><th>時間外労働時間</th><td>有り（月時間外労働時間：30時間）</td></tr>
-                <tr><th>月平均労働日数</th><td>20.7日</td></tr>
-                <tr><th>休憩時間</th><td>60分</td></tr>
-                <tr><th>年間休日数</th><td>116日</td></tr>
-                <tr><th>休日等</th><td>土曜日、日曜日、その他(週休二日制)、当社カレンダーによる(お盆休み、年末年始) ※だだし、状況等により休日出勤の可能性有り (休日出勤手当の対象となります)</td></tr>
-                <tr><th>加入保険</th><td>雇用保険、労災保険、健康保険、厚生年金</td></tr>
-                <tr><th>退職金制度</th><td>有り(勤続5年以上)</td></tr>
-                <tr><th>定年制</th><td>有り(一律65歳)</td></tr>
-                <tr><th>再雇用制度</th><td>有り(上限70歳まで)</td></tr>
-                <tr><th>選考方法</th><td>面接(予定1回)</td></tr>
-              </tbody>
-            </table>
-          </div>
-
-          <!-- Job 5 -->
-          <div class="job-item" style="margin-bottom: 80px;">
-            <h2 class="section-title" style="margin-bottom: 20px;">生産管理（材料手配・納期管理）</h2>
-            <table class="table">
-              <tbody>
-                <tr><th style="width: 25%;">業務内容</th><td>・製品の注文に対して材料手配・納期管理 ・加工先に注文の手配 ・見積・在庫納期管理</td></tr>
-                <tr><th>年齢</th><td>不問</td></tr>
-                <tr><th>学歴</th><td>高卒以上</td></tr>
-                <tr><th>必須免許・資格</th><td>普通自動車運転免許 (AT限定可)、パソコン基本操作ができる方 (エクセル・ワード等)</td></tr>
-                <tr><th>試用期間</th><td>期間1ケ月、時給1,150円～、その他の条件は面接時説明</td></tr>
-                <tr><th>賃金形態等</th><td>月給（賃金締切日：固定(月末以外) / 賃金支払日：固定(月末)）</td></tr>
-                <tr><th>基本給</th><td>210,000円〜300,000円</td></tr>
-                <tr><th>固定残業代</th><td>無し</td></tr>
-                <tr><th>その他手当等</th><td>賃金は資格、年齢、経験、スキル等により決定。各種手当有(面接時説明)。家族手当 配偶者5,000円 子3,000円(条件付)</td></tr>
-                <tr><th>通勤手当</th><td>実費支給(上限無し)</td></tr>
-                <tr><th>昇給</th><td>有り（前年度実績：1月あたり5.00％〜10.00％）</td></tr>
-                <tr><th>賞与</th><td>有り（回数：年3回、前年度実績：480,000円〜2,030,000円）</td></tr>
-                <tr><th>就業時間</th><td>8時00分〜17時00分 ※時間外は月上限45時間</td></tr>
-                <tr><th>時間外労働時間</th><td>有り（月時間外労働時間：30時間）</td></tr>
-                <tr><th>月平均労働日数</th><td>20.7日</td></tr>
-                <tr><th>休憩時間</th><td>60分</td></tr>
-                <tr><th>年間休日数</th><td>116日</td></tr>
-                <tr><th>休日等</th><td>土曜日、日曜日、その他(週休二日制)、当社カレンダーによる(お盆休み、年末年始) ※だだし、状況等により休日出勤の可能性有り (休日出勤手当の対象となります)</td></tr>
-                <tr><th>加入保険</th><td>雇用保険、労災保険、健康保険、厚生年金</td></tr>
-                <tr><th>退職金制度</th><td>有り(勤続5年以上)</td></tr>
-                <tr><th>定年制</th><td>有り(一律65歳)</td></tr>
-                <tr><th>再雇用制度</th><td>有り(上限70歳まで)</td></tr>
-                <tr><th>選考方法</th><td>面接(予定1回)</td></tr>
-              </tbody>
-            </table>
-          </div>
-
-          <!-- Job 6 -->
-          <div class="job-item" style="margin-bottom: 80px;">
-            <h2 class="section-title" style="margin-bottom: 20px;">ルート営業</h2>
-            <table class="table">
-              <tbody>
-                <tr><th style="width: 25%;">業務内容</th><td>・固定客へのルート営業 ・見積作成、受注処理、発注、納品等 ※飛び込み営業はありません</td></tr>
-                <tr><th>年齢</th><td>~45歳</td></tr>
-                <tr><th>学歴</th><td>高卒以上</td></tr>
-                <tr><th>必須免許・資格</th><td>普通自動車運転免許 (AT限定可)、パソコン基本操作ができる方 (エクセル・ワード等)</td></tr>
-                <tr><th>試用期間</th><td>期間1ケ月、時給950円～、その他の条件は面接時説明</td></tr>
-                <tr><th>賃金形態等</th><td>月給（賃金締切日：固定(月末以外) / 賃金支払日：固定(月末)）</td></tr>
-                <tr><th>基本給</th><td>220,000円〜420,000円(営業手当含む)</td></tr>
-                <tr><th>固定残業代</th><td>無し</td></tr>
-                <tr><th>その他手当等</th><td>賃金は資格、年齢、経験、スキル等により決定。各種手当有(面接時説明)。家族手当 配偶者5,000円 子3,000円(条件付)</td></tr>
-                <tr><th>通勤手当</th><td>実費支給(上限無し)</td></tr>
-                <tr><th>昇給</th><td>有り（前年度実績：1月あたり5.00％〜10.00％）</td></tr>
-                <tr><th>賞与</th><td>有り（回数：年3回、前年度実績：480,000円〜2,030,000円）</td></tr>
-                <tr><th>就業時間</th><td>8時00分〜17時00分 ※時間外は月上限45時間</td></tr>
-                <tr><th>時間外労働時間</th><td>有り（月時間外労働時間：30時間）</td></tr>
-                <tr><th>月平均労働日数</th><td>20.7日</td></tr>
-                <tr><th>休憩時間</th><td>60分</td></tr>
-                <tr><th>年間休日数</th><td>116日</td></tr>
-                <tr><th>休日等</th><td>土曜日、日曜日、その他(週休二日制)、当社カレンダーによる(お盆休み、年末年始) ※だだし、状況等により休日出勤の可能性有り (休日出勤手当の対象となります)</td></tr>
-                <tr><th>加入保険</th><td>雇用保険、労災保険、健康保険、厚生年金</td></tr>
-                <tr><th>退職金制度</th><td>有り(勤続5年以上)</td></tr>
-                <tr><th>定年制</th><td>有り(一律65歳)</td></tr>
-                <tr><th>再雇用制度</th><td>有り(上限70歳まで)</td></tr>
-                <tr><th>選考方法</th><td>面接(予定1回)</td></tr>
-              </tbody>
-            </table>
-          </div>
+            </div>
+          </details>
         </div>
 
         <!-- 募集してないリスト -->
         <div class="job-inactive-list">
-          <p class="text-center" style="color: #666; font-size: 1.1rem; padding: 60px 0;">現在、募集を停止している職種はありません。</p>
+          <div class="inactive-job">
+            <h2 class="section-title">検査</h2>
+          </div>
+          <div class="inactive-job">
+            <h2 class="section-title">生産管理事務</h2>
+          </div>
+          <div class="inactive-job">
+            <h2 class="section-title">営業</h2>
+          </div>
         </div>
 
       </div>
