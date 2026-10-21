@@ -52,14 +52,14 @@
   .video-row .video-main { flex: none; width: 100%; font-size: 1rem; }
 }
 
-/* ---- 数字の帯（4つをそれぞれ四角の線で囲む。SWELL ではカラム4列＋各列にボーダー付きのグループ） ---- */
+/* ---- 数字の帯（4つをそれぞれグレーの四角の線で囲む。SWELL ではカラム4列＋各列にボーダー付きのグループ） ---- */
 .stats {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 16px;
 }
 .stats > div {
-  border: 1px solid var(--color-main);
+  border: 1px solid var(--color-border);
   padding: 28px 16px;
   text-align: center;
 }
@@ -71,6 +71,14 @@
   .stats { grid-template-columns: 1fr 1fr; gap: 10px; }
   .stats > div { padding: 20px 8px; }
   .stats-num { font-size: 1.5rem; }
+}
+
+/* ---- 対応できる範囲の下の加工写真2枚（SWELL ではカラム2列＋画像、またはギャラリーブロック2列） ---- */
+.work-photos { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 24px; }
+.work-photos .placeholder-img { aspect-ratio: 16 / 9; }
+@media (max-width: 768px) {
+  .work-photos { gap: 10px; margin-top: 16px; }
+  .work-photos .placeholder-img { font-size: 0.8rem; }
 }
 
 /* お知らせ4件（style.css の grid-4 は 768px 以下で1列になる） */
