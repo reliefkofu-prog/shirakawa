@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>トップページの案（写真入り）｜株式会社しらかわ</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="top-variants.css">
+  <style>
+    /* 案を選んでいただくページだけで使う見た目 */
+    .choice-head { margin-bottom: 48px; }
+    .choice-head p { margin: 0 0 8px; }
+    .choice-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-bottom: 64px; align-items: start; }
+    .choice { border: 1px solid var(--color-border); display: flex; flex-direction: column; height: 100%; }
+    .choice-body { padding: 20px 24px 24px; display: flex; flex-direction: column; flex: 1; }
+    .choice-no { font-size: 0.9rem; font-weight: bold; color: #666; margin: 0; }
+    .choice h2 { font-size: 1.2rem; line-height: 1.5; margin: 4px 0 12px; }
+    .choice-lead { margin: 0 0 8px; }
+    .choice dl { margin: 0 0 20px; font-size: 0.92rem; flex: 1; }
+    .choice dt { font-weight: bold; margin-top: 14px; }
+    .choice dd { margin: 4px 0 0; }
+    .choice ol { margin: 4px 0 0; padding-left: 1.4em; }
+    .choice .btn { display: block; }
+    .reply-box { border: 1px solid var(--color-main); padding: 28px 32px; max-width: 760px; margin: 0 auto; }
+    .reply-box h2 { font-size: 1.3rem; margin: 0 0 12px; }
+    .reply-box ol { margin: 0 0 16px; padding-left: 1.4em; }
+    .reply-box li { margin-bottom: 6px; }
+    .reply-ex { background: var(--color-bg-light); padding: 14px 18px; margin: 0; }
+    @media (max-width: 900px) {
+      .choice-list { grid-template-columns: 1fr; }
+      .reply-box { padding: 20px; }
+    }
+  </style>
+</head>
+<body>
+  <section class="section">
+    <div class="container">
+      <div class="choice-head">
+        <h1 class="section-title">トップページの案（写真入り）</h1>
+        <p>5月にいただいたご意見（工場写真をページになじませたい・画像と強みを一緒に載せたい）をもとに、トップページの並びを2通りご用意しました。現在のトップページと見比べてご覧ください。</p>
+        <p>ヘッダー・お問い合わせ・会社情報（ページの一番下）は、3つとも同じです。写真と動画は、今のホームページに載っているものを仮で入れています。公開するときは、ご用意いただく写真に差し替えます。</p>
+      </div>
+
+      <div class="choice-list">
+        <div class="choice">
+          <div class="choice-body">
+            <p class="choice-no">現在</p>
+            <h2>現在のトップページ</h2>
+            <p class="choice-lead">いまご覧いただいているトップページです。</p>
+            <dl>
+              <dt>最初の画面</dt>
+              <dd>会社紹介動画</dd>
+              <dt>並び</dt>
+              <dd><ol><li>会社紹介動画</li><li>整理・整頓・清掃</li><li>工場・製品の写真5枚</li><li>各ページへの案内</li><li>お知らせ</li></ol></dd>
+            </dl>
+            <a href="index.html" class="btn btn-secondary">現在のトップを見る</a>
+          </div>
+        </div>
+        <div class="choice">
+          <div class="choice-body">
+            <p class="choice-no">案1</p>
+            <h2>今の内容を生かして、<br>すっきり見せる</h2>
+            <p class="choice-lead">現在のトップの流れを生かしたまま、対応できる範囲を加え、工場・製品の写真を画面の幅いっぱいに並べ直した案です。</p>
+            <dl>
+              <dt>最初の画面</dt>
+              <dd>会社紹介動画（文字は重ねません）</dd>
+              <dt>並び</dt>
+              <dd><ol><li>会社紹介動画</li><li>整理・整頓・清掃</li><li>対応できる範囲（大きさ・小ロットから）と加工の写真2枚</li><li>工場・製品の写真5枚（短いコメント付き）</li><li>各ページへの案内</li><li>お知らせ</li></ol></dd>
+              <dt>こんな場合に</dt>
+              <dd>今の雰囲気を大きく変えずに、早めに公開したい</dd>
+              <dt>ご用意いただくもの</dt>
+              <dd>工場・製品の写真5枚</dd>
+            </dl>
+            <a href="top-1-photo.html" class="btn btn-secondary">案1を見る</a>
+          </div>
+        </div>
+
+        <div class="choice">
+          <div class="choice-body">
+            <p class="choice-no">案2</p>
+            <h2>工場と部品の写真から、<br>はじめる</h2>
+            <p class="choice-lead">最初の画面に、工場の写真2枚と加工した部品の写真2枚を並べた案です。開いてすぐに設備と製品が目に入り、その下で対応できる大きさと「小ロットから」をお伝えします。</p>
+            <dl>
+              <dt>最初の画面</dt>
+              <dd>工場の写真2枚と、加工した部品の写真2枚（画面の横幅いっぱい）</dd>
+              <dt>並び</dt>
+              <dd><ol><li>工場・部品の写真4枚</li><li>整理・整頓・清掃</li><li>対応できる範囲（大きさ・小ロットから）と加工の写真2枚</li><li>会社紹介動画と短い説明</li><li>各ページへの案内</li><li>お知らせ</li></ol></dd>
+              <dt>こんな場合に</dt>
+              <dd>大きなお取引先だけでなく、小さな事業者の方からのご相談も増やしたい</dd>
+              <dt>ご用意いただくもの</dt>
+              <dd>工場の写真2枚、加工した部品の写真2枚、会社紹介動画のひとこと説明</dd>
+            </dl>
+            <a href="top-2-photo.html" class="btn btn-secondary">案2を見る</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="reply-box">
+        <h2>ご確認のお願い</h2>
+        <p>社長とご確認いただいたうえで、次の2点をご連絡ください。</p>
+        <ol>
+          <li>どの案がよいか（現在のままや、案の組み合わせでもかまいません）</li>
+          <li>変えたいところ、足したい・減らしたい内容があれば</li>
+        </ol>
+        <p class="reply-ex">例）案2がよい。ただし部品の写真は、大きな部品と小さな部品を1枚ずつにしたい。</p>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

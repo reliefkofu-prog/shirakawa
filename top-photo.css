@@ -1,0 +1,31 @@
+/* トップの案の写真入り版（top-1-photo・top-2-photo.html）だけで使う（2026-10-21）
+   写真は今のホームページ（www.shir.co.jp）の画像を仮で表示している */
+
+/* 写真枠：枠の大きさはそのままで、写真を枠いっぱいに表示する（SWELL では画像ブロック・ギャラリーブロック） */
+.placeholder-img.has-photo {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* 最初の画面の会社紹介動画（自動再生・音なし。SWELL ではメインビジュアルの動画） */
+.hero-video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 21 / 9;
+  object-fit: cover;
+  background-color: #000;
+}
+
+/* 案2の会社紹介動画（再生ボタンで再生） */
+.video-row video.video-main {
+  display: block;
+  min-width: 0; /* 動画本来の幅（1920px）で横に広がらないようにする */
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+  background-color: #000;
+}
+@media (max-width: 900px) {
+  .video-row video.video-main { width: 100%; }
+}
