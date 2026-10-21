@@ -58,16 +58,11 @@ img {
   margin: 0 auto;
   padding: 0 20px;
 }
+/* 下のバナーとお問い合わせの枠は、ふつうの段（.container の中身＝1160px）と同じ幅にする（2026-10-21 900px から変更） */
 .cta-box, .container-banners {
-  width: 900px;
+  width: calc(100% - 40px);
+  max-width: calc(var(--max-width) - 40px);
   margin: 0 auto;
-}
-@media (max-width: 940px) {
-  .cta-box, .container-banners {
-    width: auto;
-    margin-left: 20px;
-    margin-right: 20px;
-  }
 }
 .section {
   padding: 80px 0;
