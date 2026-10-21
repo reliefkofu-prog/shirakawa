@@ -39,8 +39,29 @@
   .ps-item figcaption { font-size: 0.72rem; padding: 20px 4px 6px; }
 }
 
-/* ---- 案1：最初の画面の動画は、上下が切れないよう動画と同じ 16:9 にする ---- */
-.placeholder-img.hero-169 { aspect-ratio: 16 / 9; }
+/* ---- ヘッダーの高さ（最初の画面を画面の高さに収めるのに使う）
+   幅で変わる（実測：1106px以上 79px／769〜1105px 105px＝メニューが2行／491〜768px 71px／490px以下 99px） ---- */
+:root { --fv-header: 79px; }
+@media (max-width: 1105px) { :root { --fv-header: 105px; } }
+@media (max-width: 768px) { :root { --fv-header: 71px; } }
+@media (max-width: 490px) { :root { --fv-header: 99px; } }
+
+/* ---- 案1：最初の画面の動画は、上下が切れないよう動画と同じ 16:9 にする。
+   まわりに余白を付け、画面の高さ（ヘッダーの下）に収まる幅にする（横に広い画面では左右が空く） ---- */
+.hero-wrap { --hero-pad: 24px; padding: var(--hero-pad); }
+.hero-wrap > .hero-169,
+.hero-wrap > .hero-video {
+  aspect-ratio: 16 / 9;
+  width: min(100%, calc((100vh - var(--fv-header) - var(--hero-pad) * 2) * 16 / 9));
+  width: min(100%, calc((100svh - var(--fv-header) - var(--hero-pad) * 2) * 16 / 9));
+  margin: 0 auto;
+}
+@media (max-width: 768px) { .hero-wrap { --hero-pad: 12px; } }
+
+/* ---- 3Sの写真の列を広めにする（style.css は 45%） ---- */
+@media (min-width: 901px) {
+  .intro-media-img { flex-basis: 55%; }
+}
 
 /* ---- 3Sの写真：900px 以下で縦に並ぶと高さが 0 になるため（style.css は親の高さの100%で指定）、3:2 で高さを決める ---- */
 @media (max-width: 900px) {
@@ -52,24 +73,48 @@
 /* 4枚で画面の高さ（ヘッダーの下）にちょうど収める。写真の縦横比は固定せず、枠に合わせて切り抜く
    （SWELL ではフルワイドブロックの最小の高さを画面の高さに合わせ、ギャラリーの画像を「切り抜く」にする） */
 .fv-photos {
-  --fv-header: 79px; /* ヘッダーの高さ（パソコン幅で実測） */
   height: calc(100vh - var(--fv-header));
   height: calc(100svh - var(--fv-header));
   min-height: 420px;
   grid-template-rows: 1fr 1fr;
 }
 .fv-photos .ps-l { aspect-ratio: auto; }
-/* ヘッダーの高さは幅で変わる（実測：1106px以上 79px／769〜1105px 105px＝メニューが2行／491〜768px 71px／490px以下 99px） */
-@media (max-width: 1105px) { .fv-photos { --fv-header: 105px; } }
+/* 案2：写真4枚の真ん中に白い箱を置き、3Sの見出しを重ねる
+   （写真に黒をかけて白文字にする案もあったが、写真を明るいまま見せ、どの写真でも読みやすい白い箱にした） */
+.fv-cover { position: relative; }
+.fv-text {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 16px;
+  text-align: center;
+}
+.fv-text-box {
+  background-color: rgba(255, 255, 255, 0.92);
+  padding: 40px 56px;
+}
+.fv-text .intro-sub-title { margin-bottom: 0; }
+@media (max-width: 768px) {
+  .fv-text-box { padding: 24px 20px; }
+  .fv-text .intro-main-title { font-size: 1.5rem; letter-spacing: 0.05em; }
+  .fv-text .intro-sub-title { font-size: 1rem; }
+}
+.fv-cover .placeholder-img { /* 灰色の版：写真の説明の文字を左上に寄せ、真ん中の白文字と重ならないようにする */
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 12px 16px;
+  font-size: 0.85rem;
+}
+.fv-cover + .intro-section .intro-media { margin-top: 0; }
 @media (max-width: 768px) {
   .fv-photos {
-    --fv-header: 71px;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(4, 1fr);
   }
   .fv-photos .ps-l { grid-column: auto; }
 }
-@media (max-width: 490px) { .fv-photos { --fv-header: 99px; } }
 
 /* ---- 会社紹介動画（案2。灰色の段に、動画と短い説明を左右に並べる） ---- */
 .video-row { display: flex; gap: 48px; align-items: center; }

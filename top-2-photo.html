@@ -34,26 +34,33 @@
 
   <!-- 案2（旧案4）：最初の画面を工場・部品の写真4枚にする -->
 
-  <!-- FV：工場2枚＋加工した部品2枚（画面の横幅いっぱい・文字なし。SWELL ではフルワイド＋ギャラリーブロック2列） -->
-  <section class="photo-strip fv-photos">
-    <figure class="ps-item ps-l"><div class="placeholder-img has-photo" style="background-image: url('https://www.shir.co.jp/top-n.jpg');" title="本社・第二工場の外観"></div></figure>
-    <figure class="ps-item ps-l"><div class="placeholder-img has-photo" style="background-image: url('https://www.shir.co.jp/setu2405-02.jpg');" title="製品を加工している様子"></div></figure>
-    <figure class="ps-item ps-l"><div class="placeholder-img has-photo" style="background-image: url('https://www.shir.co.jp/ziku-01.jpg');" title="加工した部品の写真①"></div></figure>
-    <figure class="ps-item ps-l"><div class="placeholder-img has-photo" style="background-image: url('https://www.shir.co.jp/san-02.jpg');" title="加工した部品の写真②"></div></figure>
+  <!-- FV：工場2枚＋加工した部品2枚（画面いっぱい）。真ん中に白い箱を置き、3Sの見出しを重ねる（写真は暗くしない）
+       SWELL では4枚を1枚の画像にまとめてフルワイドブロックの背景にし、中に背景色が白のグループブロックを置く -->
+  <section class="fv-cover">
+    <div class="photo-strip fv-photos">
+      <figure class="ps-item ps-l"><div class="placeholder-img has-photo" style="background-image: url('https://www.shir.co.jp/top-n.jpg');" title="本社・第二工場の外観"></div></figure>
+      <figure class="ps-item ps-l"><div class="placeholder-img has-photo" style="background-image: url('https://www.shir.co.jp/setu2405-02.jpg');" title="製品を加工している様子"></div></figure>
+      <figure class="ps-item ps-l"><div class="placeholder-img has-photo" style="background-image: url('https://www.shir.co.jp/ziku-01.jpg');" title="加工した部品の写真①"></div></figure>
+      <figure class="ps-item ps-l"><div class="placeholder-img has-photo" style="background-image: url('https://www.shir.co.jp/san-02.jpg');" title="加工した部品の写真②"></div></figure>
+    </div>
+    <div class="fv-text">
+      <div class="fv-text-box">
+        <h1 class="intro-main-title">「整理・整頓・清掃」</h1>
+        <p class="intro-sub-title">
+          すべての作業の要であり"始まり"<br>
+          私たちのこだわりです
+        </p>
+      </div>
+    </div>
   </section>
 
-  <!-- 3S（今のトップと同じ文面） -->
-  <section class="section text-center intro-section">
+  <!-- 3S（今のトップと同じ文面。見出しは最初の画面に移した） -->
+  <section class="section intro-section">
     <div class="container">
-      <h1 class="intro-main-title">「整理・整頓・清掃」</h1>
-      <p class="intro-sub-title">
-        すべての作業の要であり"始まり"<br>
-        私たちのこだわりです
-      </p>
       <div class="intro-body">
         <div class="intro-media">
           <div class="intro-media-img">
-            <div class="placeholder-img has-photo video-still" title="整理整頓清掃がされている工場写真"><video src="https://www.shir.co.jp/20260203annai.mp4#t=29" muted preload="metadata" playsinline></video></div>
+            <div class="placeholder-img has-photo video-still" title="整理整頓清掃がされている工場写真"><video src="https://www.shir.co.jp/20260203annai.mp4#t=29" muted preload="metadata" playsinline style="width: 128%; left: -28%; top: -17.3%;"></video></div>
           </div>
           <div class="intro-media-content">
             <p style="margin-bottom: 20px;">私たちは、徹底した工場環境の維持（３Ｓ）を基本に、妥協のないモノづくりを追求する技術集団です。</p>
@@ -91,7 +98,7 @@
       <p class="stats-note" style="text-align: right;">※形状に依る</p>
       <div class="work-photos">
         <div class="placeholder-img has-photo" style="background-image: url('https://www.shir.co.jp/natto-02.jpg');" title="加工している様子の写真①"></div>
-        <div class="placeholder-img has-photo" style="background-image: url('https://www.shir.co.jp/sei-02.jpg');" title="加工している様子の写真②"></div>
+        <div class="placeholder-img has-photo video-still" title="加工している様子の写真②"><video src="https://www.shir.co.jp/20260203annai.mp4#t=71" muted preload="metadata" playsinline style="width: 150%; left: -49.5%; top: -18%;"></video></div>
       </div>
     </div>
   </section>

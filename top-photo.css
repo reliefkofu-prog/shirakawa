@@ -15,20 +15,20 @@
   transform: scale(1.08);
 }
 
-/* 動画の1場面を写真の代わりに見せる（3Sの工場写真）。
-   動画の左上の帯と下の字幕が入らないよう、横25〜87%・縦12〜86%の範囲を3:2の枠に拡大して表示する */
+/* 動画の1場面を写真の代わりに見せる（3Sの工場写真・長い部品の写真）。
+   動画の左上の帯と下の字幕が入らないよう、拡大の幅と位置を video の style で場面ごとに指定する（build_top_photo.py の FRAMES） */
 .placeholder-img.video-still {
   position: relative;
   overflow: hidden;
 }
 .video-still video {
   position: absolute;
-  width: 160%;
   max-width: none;
-  left: -40%;
-  top: -16%;
   display: block;
 }
+/* 3Sの写真は 2:1 に固定する（どの幅でも同じ範囲を切り出せるように。横22〜100%・縦12〜81%） */
+.intro-media-img { min-height: 0; align-self: center; }
+.intro-media-img .video-still { height: auto; aspect-ratio: 2 / 1; }
 
 /* 最初の画面の会社紹介動画（自動再生・音なし。SWELL ではメインビジュアルの動画） */
 .hero-video {
