@@ -1,0 +1,77 @@
+/* トップの案（top-1・top-2.html）用の追加CSS。style.css は触らずここで足す（2026-10-21）
+   ワイヤーなので色はグレー階調だけ・ホバーの変化なし
+   見た目は SWELL の標準機能（メインビジュアル・ギャラリー・カラム）で作れる形にそろえている */
+
+/* style.css に残っているバナーのホバー変化・transition を止める */
+.banner-item h3,
+.banner-item .placeholder-img { transition: none !important; }
+.banner-item:hover h3 { opacity: 1 !important; }
+.banner-item:hover .placeholder-img { opacity: 0.5 !important; }
+.btn { transition: none; }
+.btn:hover { opacity: 1; }
+
+/* ---- 工場写真：画面幅いっぱい（案1は5枚＋短いコメント、案2は4枚・コメントなし。SWELL ではフルワイド＋ギャラリーブロック） ---- */
+.photo-strip {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 4px;
+}
+.ps-item { position: relative; margin: 0; }
+.ps-item .placeholder-img { aspect-ratio: auto; height: 100%; font-size: 1rem; align-items: flex-start; padding-top: 16px; }
+.ps-l { grid-column: span 3; aspect-ratio: 16 / 9; }
+.ps-s { grid-column: span 2; aspect-ratio: 4 / 3; }
+.ps-item figcaption { /* WordPress のギャラリーブロックの標準キャプションと同じ形 */
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(0deg, rgba(0,0,0,0.7), rgba(0,0,0,0));
+  color: #FFF;
+  text-align: center;
+  font-size: 0.9rem;
+  padding: 28px 8px 8px;
+}
+@media (max-width: 768px) {
+  .photo-strip { grid-template-columns: 1fr 1fr; }
+  .ps-l { grid-column: span 2; }
+  .ps-s { grid-column: span 1; }
+  .ps-s:last-child { grid-column: span 2; aspect-ratio: 16 / 9; }
+  .ps-item figcaption { font-size: 0.72rem; padding: 20px 4px 6px; }
+}
+
+/* ---- 案2：最初の画面を写真4枚（上：工場2枚／下：部品2枚）にする（画面の横幅いっぱい・コメントなし） ---- */
+.fv-photos .placeholder-img { align-items: center; padding-top: 0; }
+
+/* ---- 会社紹介動画（案2。灰色の段に、動画と短い説明を左右に並べる） ---- */
+.video-row { display: flex; gap: 48px; align-items: center; }
+.video-row .video-main { flex: 0 0 56%; aspect-ratio: 16 / 9; font-size: 1.1rem; background-color: #C8C8C8; }
+.video-text h2 { font-size: 1.6rem; margin: 0 0 16px; letter-spacing: 0.06em; }
+.video-text p { margin: 0 0 12px; overflow-wrap: anywhere; }
+@media (max-width: 900px) {
+  .video-row { flex-direction: column; align-items: stretch; gap: 24px; }
+  .video-row .video-main { flex: none; width: 100%; font-size: 1rem; }
+}
+
+/* ---- 数字の帯（4つをそれぞれ四角の線で囲む。SWELL ではカラム4列＋各列にボーダー付きのグループ） ---- */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+.stats > div {
+  border: 1px solid var(--color-main);
+  padding: 28px 16px;
+  text-align: center;
+}
+.stats-label { font-size: 0.85rem; color: #666; font-weight: bold; margin: 0 0 6px; }
+.stats-num { font-size: 2rem; font-weight: bold; line-height: 1.2; margin: 0; }
+.stats-num small { font-size: 0.95rem; margin-left: 2px; }
+.stats-note { font-size: 0.75rem; color: var(--color-text-muted); margin: 6px 0 0; }
+@media (max-width: 768px) {
+  .stats { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .stats > div { padding: 20px 8px; }
+  .stats-num { font-size: 1.5rem; }
+}
+
+/* お知らせ4件（style.css の grid-4 は 768px 以下で1列になる） */
+.news-4 .card-title { font-size: 1rem; }
