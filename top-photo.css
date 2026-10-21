@@ -8,11 +8,33 @@
   background-repeat: no-repeat;
 }
 
+/* バナーの写真はぼかす（文字を読みやすくするため。SWELL ではバナーリンクブロックの「ぼかし」）
+   ぼかすと写真の端が白く透けるので、少し拡大して枠の外に逃がす（.banner-item は overflow:hidden） */
+.banner-item .placeholder-img.has-photo {
+  filter: blur(4px);
+  transform: scale(1.08);
+}
+
+/* 動画の1場面を写真の代わりに見せる（3Sの工場写真）。
+   動画の左上の帯と下の字幕が入らないよう、横25〜87%・縦12〜86%の範囲を3:2の枠に拡大して表示する */
+.placeholder-img.video-still {
+  position: relative;
+  overflow: hidden;
+}
+.video-still video {
+  position: absolute;
+  width: 160%;
+  max-width: none;
+  left: -40%;
+  top: -16%;
+  display: block;
+}
+
 /* 最初の画面の会社紹介動画（自動再生・音なし。SWELL ではメインビジュアルの動画） */
 .hero-video {
   display: block;
   width: 100%;
-  aspect-ratio: 21 / 9;
+  aspect-ratio: 16 / 9; /* 動画と同じ比率にして上下を切らない */
   object-fit: cover;
   background-color: #000;
 }
