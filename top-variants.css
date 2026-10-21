@@ -93,11 +93,11 @@
 }
 .fv-text-box {
   background-color: rgba(255, 255, 255, 0.92);
-  padding: 40px 56px;
+  padding: 64px; /* 上下と左右を同じにする */
 }
 .fv-text .intro-sub-title { margin-bottom: 0; }
 @media (max-width: 768px) {
-  .fv-text-box { padding: 24px 20px; }
+  .fv-text-box { padding: 28px; }
   .fv-text .intro-main-title { font-size: 1.5rem; letter-spacing: 0.05em; }
   .fv-text .intro-sub-title { font-size: 1rem; }
 }
