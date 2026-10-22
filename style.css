@@ -104,9 +104,6 @@ img {
   font-weight: bold;
   font-size: 0.95rem;
 }
-.nav a:hover {
-  color: var(--color-text-muted);
-}
 .header-cta {
   display: flex;
   gap: 10px;
@@ -541,4 +538,64 @@ textarea.form-control {
     width: 100%;
     min-height: 250px;
   }
+}
+
+/* ページ内リンク（#three-s・#multus・#measure・#range・#cases）で、見出しが固定ヘッダーに隠れないようにする（2026-10-22） */
+[id] { scroll-margin-top: 110px; }
+
+/* ---- ワイヤーなのでホバーの変化・transition は付けない（2026-10-22 top-variants.css から移して全ページに効かせる） ---- */
+.btn, .banner-item h3, .banner-item .placeholder-img { transition: none !important; }
+.btn:hover { opacity: 1; }
+.banner-item:hover h3 { opacity: 1 !important; }
+.banner-item:hover .placeholder-img { opacity: 0.5 !important; }
+
+/* ---- スマホのメニュー（768px 以下。三本線のボタンで開く。SWELL では SP メニュー） ---- */
+.navtoggle { position: absolute; opacity: 0; pointer-events: none; }
+.navtoggle-btn { display: none; }
+@media (max-width: 768px) {
+  .header .container { position: relative; }
+  .navtoggle-btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 6px;
+    flex: 0 0 44px;
+    width: 44px;
+    height: 44px;
+    margin-left: auto;
+    cursor: pointer;
+  }
+  .navtoggle-btn span { display: block; width: 24px; height: 2px; margin: 0 auto; background-color: var(--color-main); }
+  .navtoggle:checked ~ .nav {
+    display: block;
+    position: absolute;
+    top: calc(100% + 15px);
+    left: 0;
+    right: 0;
+    margin: 0;
+    padding: 4px 20px 12px;
+    background-color: var(--color-bg);
+    border-bottom: 1px solid var(--color-border);
+  }
+  .navtoggle:checked ~ .nav ul { flex-direction: column; gap: 0; }
+  .navtoggle:checked ~ .nav a { display: block; padding: 12px 0; border-bottom: 1px solid var(--color-border); }
+}
+
+/* ---- スマホで下に固定するボタン（電話・お問い合わせ。SWELL では固定フッターメニュー） ---- */
+.sp-fixbar { display: none; }
+@media (max-width: 768px) {
+  .sp-fixbar {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 100;
+    border-top: 1px solid var(--color-border);
+  }
+  .sp-fixbar a { display: flex; align-items: center; justify-content: center; height: 56px; font-weight: bold; }
+  .sp-fixbar-tel { background-color: var(--color-bg); color: var(--color-main); }
+  .sp-fixbar-form { background-color: var(--color-main); color: var(--color-bg); }
+  body { padding-bottom: 56px; } /* 固定ボタンで本文の最後が隠れないように */
 }

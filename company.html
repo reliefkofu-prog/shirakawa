@@ -22,6 +22,22 @@
       grid-template-columns: repeat(3, 1fr);
       gap: 30px;
     }
+    /* 3Sプラス2Sの図：下の段に土台の3S、上の段にプラス2S（SWELL ではカラム3列・2列＋ボーダー付きのグループ） */
+    .s5-figure { max-width: 900px; margin: 0 auto 40px; }
+    .s5-row { display: grid; gap: 12px; }
+    .s5-row-2 { grid-template-columns: repeat(2, 1fr); width: 67%; margin: 0 auto; }
+    .s5-row-3 { grid-template-columns: repeat(3, 1fr); }
+    .s5-label { text-align: center; font-weight: bold; font-size: 0.9rem; color: #666; margin: 0 0 8px; }
+    .s5-box { border: 1px solid var(--color-border); padding: 16px; text-align: center; }
+    .s5-row-3 .s5-box { border: 2px solid var(--color-main); }
+    .s5-box p { margin: 0; }
+    .s5-name { font-size: 1.2rem; font-weight: bold; letter-spacing: 0.1em; }
+    .s5-text { font-size: 0.9rem; line-height: 1.6; margin-top: 6px !important; }
+    .s5-arrow { text-align: center; font-size: 1.2rem; color: #666; margin: 8px 0; }
+    @media (max-width: 768px) {
+      .s5-row-2 { width: 100%; grid-template-columns: 1fr; }
+      .s5-row-3 { grid-template-columns: 1fr; }
+    }
     @media (max-width: 768px) {
       .gallery-grid {
         grid-template-columns: 1fr;
@@ -42,6 +58,8 @@
         <a href="index.html" style="display: flex;"><img src="img/toplogo.png" alt="株式会社しらかわ" style="height: 40px; width: auto;"></a>
         <span style="font-size: 1.1rem; color: #666; font-weight: bold; letter-spacing: 0.05em; padding-top: 5px;">大物5軸精密機械加工</span>
       </div>
+      <input type="checkbox" id="navtoggle" class="navtoggle" aria-label="メニューを開く">
+      <label for="navtoggle" class="navtoggle-btn"><span></span><span></span><span></span></label>
       <nav class="nav">
         <ul>
           <li><a href="technology.html">私たちの加工技術</a></li>
@@ -73,7 +91,7 @@
           <div class="placeholder-img">代表取締役の写真</div>
         </div>
         <div class="intro-media-content">
-          <p style="margin-bottom: 20px; line-height: 1.8; color: #d9534f; font-weight: bold;">【※以下は代表挨拶のダミーテキストです】</p>
+          <p style="margin-bottom: 20px; line-height: 1.8; color: #999; font-weight: bold;">【※以下は代表挨拶のダミーテキストです】</p>
           <h3 style="font-size: 1.3rem; margin: 0 0 20px; line-height: 1.4; font-weight: bold;">技術の伝承と革新で、<br>ものづくりの未来に貢献します。</h3>
           <p style="margin-bottom: 20px; line-height: 1.8;">
             株式会社しらかわは、昭和39年の創業以来、大型精密機械加工の分野でお客様の信頼に応え続けてまいりました。平均年齢35歳という若いスタッフの情熱と無限の可能性、そして最新鋭の設備を駆使し、常に新しいものづくりに挑戦しています。
@@ -120,20 +138,54 @@
         </p>
       </div>
 
-      <!-- 会社経歴 -->
+      <!-- 3Sプラス2S（トップの3Sの要約から、ここへ案内する） -->
+      <h2 class="section-title" id="three-s">3Sプラス2S</h2>
+      <p style="margin-bottom: 32px;">製造業では「5S（整理・整頓・清掃・清潔・しつけ）」がよく掲げられます。しらかわでは、これを「3Sプラス2S」と呼んでいます。最初の3Sをすべての作業の土台として徹底し、その上に残りの2Sを積み上げる考え方です。</p>
+      <div class="s5-figure">
+        <p class="s5-label">プラス2S</p>
+        <div class="s5-row s5-row-2">
+          <div class="s5-box"><p class="s5-name">清潔</p><p class="s5-text">3Sがいつも保たれている状態をつくる</p></div>
+          <div class="s5-box"><p class="s5-name">しつけ</p><p class="s5-text">決めたことを守る習慣を、全員で身につける</p></div>
+        </div>
+        <p class="s5-arrow" aria-hidden="true">▲</p>
+        <p class="s5-label">土台の3S</p>
+        <div class="s5-row s5-row-3">
+          <div class="s5-box"><p class="s5-name">整理</p><p class="s5-text">要る物と要らない物を分け、要らない物は置かない</p></div>
+          <div class="s5-box"><p class="s5-name">整頓</p><p class="s5-text">使う物の置き場所と置き方を決める</p></div>
+          <div class="s5-box"><p class="s5-name">清掃</p><p class="s5-text">機械と床をきれいに保ち、異常に早く気づく</p></div>
+        </div>
+      </div>
+      <div class="intro-media" style="margin: 0 0 80px;">
+        <div class="intro-media-img">
+          <div class="placeholder-img">整理整頓清掃がされている工場写真</div>
+        </div>
+        <div class="intro-media-content">
+          <h3 style="font-size: 1.2rem; margin: 0 0 16px;">なぜ、まず3Sなのか</h3>
+          <p style="margin-bottom: 16px;">私たちは、長さ4,000mmに及ぶ大きな部品も加工します。大きな部品ほど、通路や置き場が乱れていると、傷や取り違えにつながります。工具の置き場が決まっていれば、段取りが早くなります。機械や床がきれいなら、油漏れなどの異常にもすぐ気づけます。品質や安全に直接つながるのが3Sだから、まずここを徹底しています。</p>
+          <p style="margin: 0;">品質を支えるのは、毎日の3Sの積み重ねです。3Sに終わりはないと考え、一人ひとりがこれからも続けていきます。</p>
+        </div>
+      </div>
+
+      <!-- 会社経歴（10/21 打ち合わせ：平成4年・平成14年・令和元年12月を外す／令和4年5月を1行に／倉庫→第4工場、社員寮は今後の計画へ） -->
       <h2 class="section-title">会社経歴</h2>
-      <table class="table history-table" style="margin-bottom: 80px;">
+      <table class="table history-table" style="margin-bottom: 40px;">
         <tbody>
           <tr><th>昭和39年4月</th><td>山梨県大月市にて、白川洋一が白川精機製作所を創業</td></tr>
           <tr><th>平成3年5月</th><td>資本金300万円で有限会社白川精機製作所を設立し、法人化</td></tr>
-          <tr><th>平成4年5月</th><td>同所に工場（300平米）を増築し、大型精密機械加工を拡大</td></tr>
-          <tr><th>平成14年5月</th><td>白川喜一が社長の就任と同時に、資本金1,000万円に増資し、社名を株式会社しらかわに改称</td></tr>
-          <tr><th>平成22年2月</th><td>大型精密機械加工能力を増強のため、山梨県大月市から山梨県都留市（現在地）に新工場（1,100平米）を新築し移転現在に至る</td></tr>
-          <tr><th>令和元年12月</th><td>第二工場の建設予定地（5,900平米）を取得</td></tr>
+          <tr><th>平成22年2月</th><td>大型精密機械加工能力を増強のため、山梨県大月市から山梨県都留市（現在地）に新工場（1,100平米）を新築し移転</td></tr>
           <tr><th>令和3年 7月</th><td>経済産業省「サプライチェーン対策のための国内投資促進事業補助金」に採択決定</td></tr>
-          <tr><th>令和4年 5月</th><td>第二工場(2,671平米)を新築。<br>同時に新設備を加工機7台、測定機1台導入し2拠点での操業開始</td></tr>
-          <tr><th>令和6年 7月</th><td>第三工場建設予定地(2,167平米)を取得</td></tr>
-          <tr><th>令和7年 8月</th><td>倉庫兼社員寮建設予定地(1,809平米)を取得</td></tr>
+          <tr><th>令和4年 5月</th><td>第二工場（2,671平米）を新築し、加工機7台・測定機1台を導入。2拠点での操業を開始</td></tr>
+          <tr><th>令和6年 7月</th><td>第三工場の建設予定地（2,167平米）を取得</td></tr>
+          <tr><th>令和7年 8月</th><td>第4工場の建設予定地（1,809平米）を取得</td></tr>
+        </tbody>
+      </table>
+
+      <!-- 今後の計画（社員寮は会社経歴から、ここへ移した） -->
+      <h2 class="section-title">今後の計画</h2>
+      <table class="table history-table" style="margin-bottom: 80px;">
+        <tbody>
+          <tr><th>第三工場</th><td>建設予定（用地2,167平米を取得済み）。完成予定 ◯◯</td></tr>
+          <tr><th>第4工場・社員寮</th><td>建設予定（用地1,809平米を取得済み）。完成予定 ◯◯</td></tr>
         </tbody>
       </table>
 
@@ -163,44 +215,41 @@
           <tr>
             <th>主要お客様</th>
             <td>
-              ＴＨＫ株式会社殿　株式会社日本製鋼所殿<br>
-              株式会社明電舎殿　津田駒工業株式会社殿
+              ＴＨＫ株式会社殿　ＫＨＫ◯◯殿　津田駒工業株式会社殿　ほか
             </td>
           </tr>
           <tr><th>営業品目</th><td>精密機械部品、車輌部品、ＩＴ関連部品等の機械加工</td></tr>
         </tbody>
       </table>
 
-      <!-- メディア紹介 -->
+      <!-- メディア紹介（お知らせの「メディア紹介」カテゴリを新しい順に3件。SWELL では投稿リストブロックでカテゴリを指定。
+           新聞・テレビは見出しだけを載せ、本文は載せない。紙面・画面の画像は新聞社・放送局の許可が取れた場合だけ） -->
       <h2 class="section-title">メディア紹介</h2>
       <div class="grid grid-3" style="margin-bottom: 80px;">
         <a href="news-detail.html" class="card" style="text-decoration:none; color:inherit; border: none;">
-          <div class="placeholder-img" style="aspect-ratio: 3/2;">メディア画像 1</div>
+          <div class="placeholder-img" style="aspect-ratio: 3/2;">取材時の写真、または掲載紙面（新聞社の許可が取れた場合）</div>
           <div class="card-body" style="padding: 15px 0;">
             <div class="card-meta" style="font-size: 0.8rem; color: #999;">2024.07.17</div>
-            <h3 class="card-title" style="font-size: 1rem; margin: 5px 0;">山梨日日新聞 掲載記事</h3>
-            <p class="card-text" style="font-size: 0.9rem;">「ビジネスリーダーに聞く」の特集にて弊社の取り組みが紹介されました。</p>
+            <h3 class="card-title" style="font-size: 1rem; margin: 5px 0;">山梨日日新聞「ビジネスリーダーに聞く」に掲載されました</h3>
           </div>
         </a>
         <a href="#" class="card" style="text-decoration:none; color:inherit; border: none;">
-          <div class="placeholder-img" style="aspect-ratio: 3/2;">メディア画像 2</div>
+          <div class="placeholder-img" style="aspect-ratio: 3/2;">取材時の写真、または掲載紙面（新聞社の許可が取れた場合）</div>
           <div class="card-body" style="padding: 15px 0;">
             <div class="card-meta" style="font-size: 0.8rem; color: #999;">2024.07.11</div>
-            <h3 class="card-title" style="font-size: 1rem; margin: 5px 0;">山梨日日新聞 掲載記事</h3>
-            <p class="card-text" style="font-size: 0.9rem;">第三工場新設に関する記事が掲載されました。</p>
+            <h3 class="card-title" style="font-size: 1rem; margin: 5px 0;">山梨日日新聞に第三工場の記事が掲載されました</h3>
           </div>
         </a>
         <a href="#" class="card" style="text-decoration:none; color:inherit; border: none;">
-          <div class="placeholder-img" style="aspect-ratio: 3/2;">メディア画像 3</div>
+          <div class="placeholder-img" style="aspect-ratio: 3/2;">取材時の写真、または放送画面（放送局の許可が取れた場合）</div>
           <div class="card-body" style="padding: 15px 0;">
             <div class="card-meta" style="font-size: 0.8rem; color: #999;">2024.06.04</div>
-            <h3 class="card-title" style="font-size: 1rem; margin: 5px 0;">YBSワイドニュース 放映</h3>
-            <p class="card-text" style="font-size: 0.9rem;">地元ニュース番組にて弊社の工場内24時間体制の様子が放送されました。</p>
+            <h3 class="card-title" style="font-size: 1rem; margin: 5px 0;">YBSワイドニュースで紹介されました</h3>
           </div>
         </a>
       </div>
 
-      <!-- お知らせ -->
+      <!-- お知らせ（「イベント」「受賞」「社内活動」カテゴリを新しい順に6件。SWELL では投稿リストブロックでカテゴリを指定） -->
       <h2 class="section-title">お知らせ</h2>
       <div class="grid grid-3" style="margin-bottom: 60px;">
         
@@ -236,7 +285,7 @@
           <div class="placeholder-img" style="aspect-ratio: 3/2;">標語 画像</div>
           <div class="card-body" style="padding: 15px 0;">
             <div class="card-meta" style="font-size: 0.8rem; color: #999;">2026.01.15</div>
-            <h3 class="card-title" style="font-size:1rem; margin: 5px 0;">標号</h3>
+            <h3 class="card-title" style="font-size:1rem; margin: 5px 0;">標語</h3>
           </div>
         </a>
 
@@ -338,6 +387,8 @@
         <a href="recruit.html" style="text-decoration: none; color: #FFF;">採用情報</a>
         <span style="color: rgba(255,255,255,0.3);">|</span>
         <a href="contact.html" style="text-decoration: none; color: #FFF;">お問い合わせ</a>
+        <span style="color: rgba(255,255,255,0.3);">|</span>
+        <a href="privacy.html" style="text-decoration: none; color: #FFF;">プライバシーポリシー</a>
       </div>
 
       <!-- コピーライト -->
@@ -347,6 +398,12 @@
       
     </div>
   </footer>
+
+  <!-- スマホで下に固定するボタン（SWELL では固定フッターメニュー） -->
+  <div class="sp-fixbar">
+    <a href="tel:0554-56-8233" class="sp-fixbar-tel">電話する</a>
+    <a href="contact.html" class="sp-fixbar-form">お問い合わせ</a>
+  </div>
 
 </body>
 </html>

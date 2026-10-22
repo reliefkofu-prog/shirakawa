@@ -2,15 +2,9 @@
    ワイヤーなので色はグレー階調だけ・ホバーの変化なし
    見た目は SWELL の標準機能（メインビジュアル・ギャラリー・カラム）で作れる形にそろえている */
 
-/* style.css に残っているバナーのホバー変化・transition を止める */
-.banner-item h3,
-.banner-item .placeholder-img { transition: none !important; }
-.banner-item:hover h3 { opacity: 1 !important; }
-.banner-item:hover .placeholder-img { opacity: 0.5 !important; }
-.btn { transition: none; }
-.btn:hover { opacity: 1; }
+/* ホバーの変化・transition を止める指定は style.css の最後へ移した（2026-10-22） */
 
-/* ---- 工場写真：画面幅いっぱい（案1は5枚＋短いコメント、案2は4枚・コメントなし。SWELL ではフルワイド＋ギャラリーブロック） ---- */
+/* ---- 工場写真：画面幅いっぱい（案1の5枚＋短いコメント。SWELL ではフルワイド＋ギャラリーブロック） ---- */
 .photo-strip {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
@@ -40,11 +34,14 @@
 }
 
 /* ---- ヘッダーの高さ（最初の画面を画面の高さに収めるのに使う）
-   幅で変わる（実測：1106px以上 79px／769〜1105px 105px＝メニューが2行／491〜768px 71px／490px以下 99px） ---- */
+   幅で変わる（実測 2026-10-22 スマホのメニューのボタンを足した後：1106px以上 79px／769〜1105px 105px＝メニューが2行／536〜768px 75px／535px以下 99px） ---- */
 :root { --fv-header: 79px; }
 @media (max-width: 1105px) { :root { --fv-header: 105px; } }
-@media (max-width: 768px) { :root { --fv-header: 71px; } }
-@media (max-width: 490px) { :root { --fv-header: 99px; } }
+@media (max-width: 768px) { :root { --fv-header: 75px; } }
+@media (max-width: 535px) { :root { --fv-header: 99px; } }
+/* スマホは下に固定したボタン（56px。style.css の .sp-fixbar）の分も引く */
+:root { --fv-bottom: 0px; }
+@media (max-width: 768px) { :root { --fv-bottom: 56px; } }
 
 /* ---- 案1：最初の画面の動画は、上下が切れないよう動画と同じ 16:9 にする。
    まわりに余白を付け、画面の高さ（ヘッダーの下）に収まる幅にする（横に広い画面では左右が空く） ---- */
@@ -52,8 +49,8 @@
 .hero-wrap > .hero-169,
 .hero-wrap > .hero-video {
   aspect-ratio: 16 / 9;
-  width: min(100%, calc((100vh - var(--fv-header) - var(--hero-pad) * 2) * 16 / 9));
-  width: min(100%, calc((100svh - var(--fv-header) - var(--hero-pad) * 2) * 16 / 9));
+  width: min(100%, calc((100vh - var(--fv-header) - var(--fv-bottom) - var(--hero-pad) * 2) * 16 / 9));
+  width: min(100%, calc((100svh - var(--fv-header) - var(--fv-bottom) - var(--hero-pad) * 2) * 16 / 9));
   margin: 0 auto;
 }
 @media (max-width: 768px) { .hero-wrap { --hero-pad: 12px; } }
@@ -68,20 +65,14 @@
   .intro-media-img .placeholder-img { height: auto; aspect-ratio: 3 / 2; }
 }
 
-/* ---- 案2：最初の画面を写真4枚（上：工場2枚／下：部品2枚）にする（画面の横幅いっぱい・コメントなし） ---- */
-.fv-photos .placeholder-img { align-items: center; padding-top: 0; }
-/* 4枚で画面の高さ（ヘッダーの下）にちょうど収める。写真の縦横比は固定せず、枠に合わせて切り抜く
-   （SWELL ではフルワイドブロックの最小の高さを画面の高さに合わせ、ギャラリーの画像を「切り抜く」にする） */
-.fv-photos {
-  height: calc(100vh - var(--fv-header));
-  height: calc(100svh - var(--fv-header));
+/* ---- 案2：最初の画面を正面玄関・看板の写真1枚にする（画面の高さ＝ヘッダーの下にちょうど収める） ---- */
+.fv-single {
+  height: calc(100vh - var(--fv-header) - var(--fv-bottom));
+  height: calc(100svh - var(--fv-header) - var(--fv-bottom));
   min-height: 420px;
-  grid-template-rows: 1fr 1fr;
-  gap: 0; /* 写真と写真の間をあけない（2026-10-21） */
 }
-.fv-photos .ps-l { aspect-ratio: auto; }
-/* 案2：写真4枚の真ん中に白い箱を置き、3Sの見出しを重ねる
-   （写真に黒をかけて白文字にする案もあったが、写真を明るいまま見せ、どの写真でも読みやすい白い箱にした） */
+.fv-single .placeholder-img { height: 100%; aspect-ratio: auto; }
+/* 写真の上に白い箱を置き、3Sの見出しを重ねる（写真に黒をかけて白文字にする案もあったが、どの写真でも読みやすい白い箱にした） */
 .fv-cover { position: relative; }
 .fv-text {
   position: absolute;
@@ -99,6 +90,8 @@
 /* 見出しは大きく（2026-10-21）。画面の幅に合わせて 28〜52px で変え、スマホでも1行に収める */
 .fv-text .intro-main-title { font-size: clamp(1.75rem, 4.2vw, 3.25rem); }
 .fv-text .intro-sub-title { margin-bottom: 0; }
+/* 案2：看板が隠れないよう、PCでは白い箱を左に寄せる */
+@media (min-width: 769px) { .fv-text-left { justify-content: flex-start; padding-left: 6%; } }
 @media (max-width: 768px) {
   .fv-text-box { padding: 28px; }
   .fv-text .intro-main-title { letter-spacing: 0; } /* 375px で1行に収める */
@@ -110,16 +103,8 @@
   padding: 12px 16px;
   font-size: 0.85rem;
 }
-.fv-cover + .intro-section .intro-media { margin-top: 0; }
-@media (max-width: 768px) {
-  .fv-photos {
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(4, 1fr);
-  }
-  .fv-photos .ps-l { grid-column: auto; }
-}
 
-/* ---- 会社紹介動画（案2。灰色の段に、動画と短い説明を左右に並べる） ---- */
+/* ---- 会社紹介動画（案2。最初の画面のすぐ下。灰色の段に、動画と短い説明を左右に並べる） ---- */
 .video-row { display: flex; gap: 48px; align-items: center; }
 .video-row .video-main { flex: 0 0 56%; aspect-ratio: 16 / 9; font-size: 1.1rem; background-color: #C8C8C8; }
 .video-text h2 { font-size: 1.6rem; margin: 0 0 16px; letter-spacing: 0.06em; }
@@ -160,3 +145,40 @@
 
 /* お知らせ4件（style.css の grid-4 は 768px 以下で1列になる） */
 .news-4 .card-title { font-size: 1rem; }
+
+/* ---- 3Sの要約（写真＋3つのアイコン＋短い説明。SWELL ではカラム2列＋アイコンリスト、または画像＋テキストの横並び） ---- */
+.s3-list { list-style: none; margin: 0 0 20px; padding: 0; }
+.s3-list li { display: flex; align-items: center; gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--color-border); }
+.s3-list li:first-child { padding-top: 0; }
+.s3-icon {
+  flex: 0 0 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: var(--color-border);
+  color: var(--color-text-muted);
+  font-size: 0.65rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.s3-name { font-size: 1.2rem; font-weight: bold; margin: 0; line-height: 1.4; letter-spacing: 0.1em; }
+.s3-text { margin: 0; font-size: 0.95rem; line-height: 1.6; }
+.s3-lead { margin: 0 0 24px; line-height: 1.9; }
+.s3-summary .intro-sub-title { margin-bottom: 0; }
+@media (max-width: 768px) {
+  .s3-icon { flex-basis: 44px; height: 44px; }
+  .s3-name { font-size: 1.05rem; }
+}
+
+/* ---- 設備・加工品のスライド（4枚。動きは付けず、並びと点だけ示す。スマホは横にスクロール） ---- */
+.slides { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.slide { display: block; color: var(--color-main); }
+.slide .placeholder-img { aspect-ratio: 4 / 3; font-size: 0.85rem; padding: 8px; }
+.slide-title { font-weight: bold; margin: 10px 0 0; line-height: 1.5; }
+.slide-dots { display: flex; justify-content: center; gap: 8px; margin-top: 20px; }
+.slide-dots span { width: 8px; height: 8px; border-radius: 50%; background-color: #C8C8C8; }
+.slide-dots span.is-current { background-color: var(--color-main); }
+@media (max-width: 768px) {
+  .slides { grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: 72%; overflow-x: auto; padding-bottom: 4px; }
+}

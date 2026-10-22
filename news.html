@@ -5,6 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>お知らせ｜株式会社しらかわ</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* お知らせのカテゴリ（10/22 追加） */
+    .news-cats { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 32px; }
+    .news-cats span { border: 1px solid var(--color-border); padding: 6px 14px; font-size: 0.9rem; font-weight: bold; }
+    .news-cats span.is-current { background-color: var(--color-main); border-color: var(--color-main); color: #FFF; }
+  </style>
 </head>
 <body>
 
@@ -15,7 +21,9 @@
         <a href="index.html" style="display: flex;"><img src="img/toplogo.png" alt="株式会社しらかわ" style="height: 40px; width: auto;"></a>
         <span style="font-size: 1.1rem; color: #666; font-weight: bold; letter-spacing: 0.05em; padding-top: 5px;">大物5軸精密機械加工</span>
       </div>
-            <nav class="nav">
+            <input type="checkbox" id="navtoggle" class="navtoggle" aria-label="メニューを開く">
+      <label for="navtoggle" class="navtoggle-btn"><span></span><span></span><span></span></label>
+      <nav class="nav">
         <ul>
           <li><a href="technology.html">私たちの加工技術</a></li>
           <li><a href="equipment.html">設備案内</a></li>
@@ -41,8 +49,13 @@
     <div class="pb-0 container-narrow">
 
 
+      <!-- カテゴリ（はじめは「すべて」を新しい順に表示。SWELL ではカテゴリー一覧ページへのリンク、またはタブブロック＋カテゴリを絞った投稿リスト） -->
+      <div class="news-cats">
+        <span class="is-current">すべて</span><span>イベント</span><span>メディア紹介</span><span>受賞</span><span>社内活動</span><span>お知らせ</span>
+      </div>
+
       <div class="grid grid-3">
-        <!-- 記事カード -->
+        <!-- 記事カード（新しい順。今のサイトにある記事だけ。メディア紹介は見出しだけで本文は載せない） -->
         <a href="news-detail.html" class="card" style="text-decoration:none; color:inherit; border: none;">
           <div class="placeholder-img">写真（ご来社）</div>
           <div class="card-body" style="padding: 15px 0;">
@@ -55,7 +68,7 @@
         <a href="#" class="card" style="text-decoration:none; color:inherit; border: none;">
           <div class="placeholder-img">写真（ご来社）</div>
           <div class="card-body" style="padding: 15px 0;">
-            <div class="card-meta">2026.04.20 / メディア</div>
+            <div class="card-meta">2026.04.20 / イベント</div>
             <h3 class="card-title">山梨中央銀行 関会長 古屋頭取ご来社</h3>
             <p class="card-text">山梨中央銀行の関会長ならびに古屋頭取にご来社いただきました。</p>
           </div>
@@ -74,7 +87,7 @@
           <div class="placeholder-img">写真（標語板）</div>
           <div class="card-body" style="padding: 15px 0;">
             <div class="card-meta">2026.01.15 / 社内活動</div>
-            <h3 class="card-title">標号 全長３メートル×１メートルの標語板</h3>
+            <h3 class="card-title">標語 全長３メートル×１メートルの標語板</h3>
             <p class="card-text">まずは『３Ｓ』～整理・整頓・清掃～。工場内に大型の標語板を設置しました。</p>
           </div>
         </a>
@@ -82,9 +95,33 @@
         <a href="#" class="card" style="text-decoration:none; color:inherit; border: none;">
           <div class="placeholder-img">写真（ふるさと納税）</div>
           <div class="card-body" style="padding: 15px 0;">
-            <div class="card-meta">2025.11.05 / 活動報告</div>
+            <div class="card-meta">2025.11.05 / 社内活動</div>
             <h3 class="card-title">企業版ふるさと納税（小林信保 大月市長）</h3>
             <p class="card-text">地域貢献の一環として、大月市への企業版ふるさと納税を行いました。</p>
+          </div>
+        </a>
+
+        <a href="news-detail.html" class="card" style="text-decoration:none; color:inherit; border: none;">
+          <div class="placeholder-img">写真（取材時）</div>
+          <div class="card-body" style="padding: 15px 0;">
+            <div class="card-meta">2024.07.17 / メディア紹介</div>
+            <h3 class="card-title">山梨日日新聞「ビジネスリーダーに聞く」に掲載されました</h3>
+          </div>
+        </a>
+
+        <a href="news-detail.html" class="card" style="text-decoration:none; color:inherit; border: none;">
+          <div class="placeholder-img">写真（取材時）</div>
+          <div class="card-body" style="padding: 15px 0;">
+            <div class="card-meta">2024.07.11 / メディア紹介</div>
+            <h3 class="card-title">山梨日日新聞に第三工場の記事が掲載されました</h3>
+          </div>
+        </a>
+
+        <a href="news-detail.html" class="card" style="text-decoration:none; color:inherit; border: none;">
+          <div class="placeholder-img">写真（取材時）</div>
+          <div class="card-body" style="padding: 15px 0;">
+            <div class="card-meta">2024.06.04 / メディア紹介</div>
+            <h3 class="card-title">YBSワイドニュースで紹介されました</h3>
           </div>
         </a>
 
@@ -96,89 +133,6 @@
             <p class="card-text">長年の社会貢献活動が評価され、令和2年4月に15年連続表彰を受賞いたしました。</p>
           </div>
         </a>
-
-        <!-- 追加ダミー記事 7-15 -->
-        <a href="#" class="card" style="text-decoration:none; color:inherit; border: none;">
-          <div class="placeholder-img">写真（設備導入）</div>
-          <div class="card-body" style="padding: 15px 0;">
-            <div class="card-meta">2024.12.01 / 設備</div>
-            <h3 class="card-title">最新加工機の導入完了のお知らせ</h3>
-            <p class="card-text">更なる加工精度向上のため、最新のマシニングセンタを導入いたしました。</p>
-          </div>
-        </a>
-
-        <a href="#" class="card" style="text-decoration:none; color:inherit; border: none;">
-          <div class="placeholder-img">写真（地域貢献）</div>
-          <div class="card-body" style="padding: 15px 0;">
-            <div class="card-meta">2024.11.15 / 地域貢献</div>
-            <h3 class="card-title">近隣清掃活動の実施報告</h3>
-            <p class="card-text">地域社会への貢献として、工場周辺の定期清掃活動を実施いたしました。</p>
-          </div>
-        </a>
-
-        <a href="#" class="card" style="text-decoration:none; color:inherit; border: none;">
-          <div class="placeholder-img">写真（研修）</div>
-          <div class="card-body" style="padding: 15px 0;">
-            <div class="card-meta">2024.10.20 / 社内研修</div>
-            <h3 class="card-title">若手技術者向け技術研修会の開催</h3>
-            <p class="card-text">社内の技術継承を目的とした研修会を実施しました。</p>
-          </div>
-        </a>
-
-        <a href="#" class="card" style="text-decoration:none; color:inherit; border: none;">
-          <div class="placeholder-img">写真（展示会）</div>
-          <div class="card-body" style="padding: 15px 0;">
-            <div class="card-meta">2024.09.10 / 展示会</div>
-            <h3 class="card-title">工作機械見本市への視察</h3>
-            <p class="card-text">最新技術の動向調査のため、国内外の展示会へ視察に伺いました。</p>
-          </div>
-        </a>
-
-        <a href="#" class="card" style="text-decoration:none; color:inherit; border: none;">
-          <div class="placeholder-img">写真（採用）</div>
-          <div class="card-body" style="padding: 15px 0;">
-            <div class="card-meta">2024.08.01 / 採用</div>
-            <h3 class="card-title">2025年度新卒採用の受付を開始しました</h3>
-            <p class="card-text">新しい感性を持った次世代のエンジニアを募集しています。</p>
-          </div>
-        </a>
-
-        <a href="#" class="card" style="text-decoration:none; color:inherit; border: none;">
-          <div class="placeholder-img">写真（SDGs）</div>
-          <div class="card-body" style="padding: 15px 0;">
-            <div class="card-meta">2024.07.15 / CSR</div>
-            <h3 class="card-title">環境負荷低減への取り組みについて</h3>
-            <p class="card-text">工場内の省エネ化を推進し、環境に配慮した製造体制を強化しています。</p>
-          </div>
-        </a>
-
-        <a href="#" class="card" style="text-decoration:none; color:inherit; border: none;">
-          <div class="placeholder-img">写真（安全）</div>
-          <div class="card-body" style="padding: 15px 0;">
-            <div class="card-meta">2024.06.30 / 安全</div>
-            <h3 class="card-title">安全衛生講習会の実施</h3>
-            <p class="card-text">無災害記録の更新に向け、全社員参加の安全講習を実施しました。</p>
-          </div>
-        </a>
-
-        <a href="#" class="card" style="text-decoration:none; color:inherit; border: none;">
-          <div class="placeholder-img">写真（メディア）</div>
-          <div class="card-body" style="padding: 15px 0;">
-            <div class="card-meta">2024.06.05 / メディア</div>
-            <h3 class="card-title">地元メディアによる取材協力</h3>
-            <p class="card-text">地域産業の活性化をテーマにした取材を受けました。</p>
-          </div>
-        </a>
-
-        <a href="#" class="card" style="text-decoration:none; color:inherit; border: none;">
-          <div class="placeholder-img">写真（福利厚生）</div>
-          <div class="card-body" style="padding: 15px 0;">
-            <div class="card-meta">2024.05.20 / 社内行事</div>
-            <h3 class="card-title">社内親睦会の開催</h3>
-            <p class="card-text">社員同士の交流を深めるため、親睦イベントを開催しました。</p>
-          </div>
-        </a>
-
       </div>
 
       <!-- Pagination Dummy -->
@@ -239,6 +193,8 @@
         <a href="recruit.html" style="text-decoration: none; color: #FFF;">採用情報</a>
         <span style="color: rgba(255,255,255,0.3);">|</span>
         <a href="contact.html" style="text-decoration: none; color: #FFF;">お問い合わせ</a>
+        <span style="color: rgba(255,255,255,0.3);">|</span>
+        <a href="privacy.html" style="text-decoration: none; color: #FFF;">プライバシーポリシー</a>
       </div>
 
       <!-- コピーライト -->
@@ -248,6 +204,12 @@
       
     </div>
   </footer>
+
+  <!-- スマホで下に固定するボタン（SWELL では固定フッターメニュー） -->
+  <div class="sp-fixbar">
+    <a href="tel:0554-56-8233" class="sp-fixbar-tel">電話する</a>
+    <a href="contact.html" class="sp-fixbar-form">お問い合わせ</a>
+  </div>
 
 </body>
 </html>
