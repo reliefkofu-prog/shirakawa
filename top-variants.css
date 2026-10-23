@@ -146,26 +146,15 @@
 /* お知らせ4件（style.css の grid-4 は 768px 以下で1列になる） */
 .news-4 .card-title { font-size: 1rem; }
 
-/* ---- 3Sプラス2S（導入文＋図＋写真と「なぜ、まず3Sなのか」。アイコンは使わない。SWELL ではカラム3列・2列＋ボーダー付きのグループ、画像＋テキストの横並び） ---- */
+/* ---- 3Sプラス2S（導入文＋文章の説明＋写真と「なぜ、まず3Sなのか」。図・アイコンは使わない。SWELL では段落＋太字、画像＋テキストの横並び） ---- */
 .s3-summary .intro-sub-title { margin-bottom: 0; }
-.s5-lead { max-width: 900px; margin: 40px auto 32px; line-height: 1.9; }
-.s5-figure { max-width: 900px; margin: 0 auto; }
-.s5-row { display: grid; gap: 12px; }
-.s5-row-2 { grid-template-columns: repeat(2, 1fr); width: 80%; margin: 0 auto; }
-.s5-row-3 { grid-template-columns: repeat(3, 1fr); }
-.s5-label { text-align: center; font-weight: bold; font-size: 0.9rem; color: #666; margin: 0 0 8px; }
-.s5-box { border: 1px solid var(--color-border); padding: 16px; text-align: center; }
-.s5-row-3 .s5-box { border: 2px solid var(--color-main); }
-.s5-box p { margin: 0; }
-.s5-name { font-size: 1.2rem; font-weight: bold; letter-spacing: 0.1em; }
-.s5-text { font-size: 0.9rem; line-height: 1.6; margin-top: 6px !important; }
-.s5-arrow { text-align: center; font-size: 1.2rem; color: #666; margin: 8px 0; }
+.s5-lead { max-width: 900px; margin: 40px auto 24px; line-height: 1.9; }
+.s5-textblock { max-width: 900px; margin: 0 auto; }
+.s5-textblock p { margin: 0 0 20px; line-height: 2; }
+.s5-textblock p.s5-group { font-weight: bold; margin: 0 0 4px; }
 .s3-summary .s5-why-title { font-size: 1.2rem; margin: 0 0 16px; padding: 0; border: none; text-align: left; }
 .s5-why-text { margin: 0 0 16px; line-height: 1.9; }
 .s5-why-text:last-child { margin-bottom: 0; }
 @media (max-width: 768px) {
   .s5-lead { margin-top: 24px; }
-  .s5-row-2 { width: 100%; grid-template-columns: 1fr; }
-  .s5-row-3 { grid-template-columns: 1fr; }
 }
-
