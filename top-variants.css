@@ -146,39 +146,26 @@
 /* お知らせ4件（style.css の grid-4 は 768px 以下で1列になる） */
 .news-4 .card-title { font-size: 1rem; }
 
-/* ---- 3Sの要約（写真＋3つのアイコン＋短い説明。SWELL ではカラム2列＋アイコンリスト、または画像＋テキストの横並び） ---- */
-.s3-list { list-style: none; margin: 0 0 20px; padding: 0; }
-.s3-list li { display: flex; align-items: center; gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--color-border); }
-.s3-list li:first-child { padding-top: 0; }
-.s3-icon {
-  flex: 0 0 56px;
-  height: 56px;
-  border-radius: 50%;
-  background-color: var(--color-border);
-  color: var(--color-text-muted);
-  font-size: 0.65rem;
-  font-weight: bold;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.s3-name { font-size: 1.2rem; font-weight: bold; margin: 0; line-height: 1.4; letter-spacing: 0.1em; }
-.s3-text { margin: 0; font-size: 0.95rem; line-height: 1.6; }
-.s3-lead { margin: 0 0 24px; line-height: 1.9; }
+/* ---- 3Sプラス2S（導入文＋図＋写真と「なぜ、まず3Sなのか」。アイコンは使わない。SWELL ではカラム3列・2列＋ボーダー付きのグループ、画像＋テキストの横並び） ---- */
 .s3-summary .intro-sub-title { margin-bottom: 0; }
+.s5-lead { max-width: 900px; margin: 40px auto 32px; line-height: 1.9; }
+.s5-figure { max-width: 900px; margin: 0 auto; }
+.s5-row { display: grid; gap: 12px; }
+.s5-row-2 { grid-template-columns: repeat(2, 1fr); width: 80%; margin: 0 auto; }
+.s5-row-3 { grid-template-columns: repeat(3, 1fr); }
+.s5-label { text-align: center; font-weight: bold; font-size: 0.9rem; color: #666; margin: 0 0 8px; }
+.s5-box { border: 1px solid var(--color-border); padding: 16px; text-align: center; }
+.s5-row-3 .s5-box { border: 2px solid var(--color-main); }
+.s5-box p { margin: 0; }
+.s5-name { font-size: 1.2rem; font-weight: bold; letter-spacing: 0.1em; }
+.s5-text { font-size: 0.9rem; line-height: 1.6; margin-top: 6px !important; }
+.s5-arrow { text-align: center; font-size: 1.2rem; color: #666; margin: 8px 0; }
+.s3-summary .s5-why-title { font-size: 1.2rem; margin: 0 0 16px; padding: 0; border: none; text-align: left; }
+.s5-why-text { margin: 0 0 16px; line-height: 1.9; }
+.s5-why-text:last-child { margin-bottom: 0; }
 @media (max-width: 768px) {
-  .s3-icon { flex-basis: 44px; height: 44px; }
-  .s3-name { font-size: 1.05rem; }
+  .s5-lead { margin-top: 24px; }
+  .s5-row-2 { width: 100%; grid-template-columns: 1fr; }
+  .s5-row-3 { grid-template-columns: 1fr; }
 }
 
-/* ---- 設備・加工品のスライド（4枚。動きは付けず、並びと点だけ示す。スマホは横にスクロール） ---- */
-.slides { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
-.slide { display: block; color: var(--color-main); }
-.slide .placeholder-img { aspect-ratio: 4 / 3; font-size: 0.85rem; padding: 8px; }
-.slide-title { font-weight: bold; margin: 10px 0 0; line-height: 1.5; }
-.slide-dots { display: flex; justify-content: center; gap: 8px; margin-top: 20px; }
-.slide-dots span { width: 8px; height: 8px; border-radius: 50%; background-color: #C8C8C8; }
-.slide-dots span.is-current { background-color: var(--color-main); }
-@media (max-width: 768px) {
-  .slides { grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: 72%; overflow-x: auto; padding-bottom: 4px; }
-}
