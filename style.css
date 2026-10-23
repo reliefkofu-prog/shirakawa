@@ -599,3 +599,8 @@ textarea.form-control {
   .sp-fixbar-form { background-color: var(--color-main); color: var(--color-bg); }
   body { padding-bottom: 56px; } /* 固定ボタンで本文の最後が隠れないように */
 }
+
+/* 記事カード：SWELL の投稿リストブロック（カード型）と同じ並び。カテゴリ名は画像の左上、日付はタイトルの下（10/23） */
+.post-thumb { position: relative; }
+.post-cat { position: absolute; top: 0; left: 0; background-color: var(--color-main); color: #FFF; font-size: 0.75rem; font-weight: bold; line-height: 1.4; padding: 4px 10px; }
+.card-meta.post-date { margin: 10px 0 0; }
